@@ -1,4 +1,4 @@
-k # This is the name of our workflow.
+ # This is the name of our workflow.
     # Github will show it on its Website UI
     name: deploy
     # This configures our workflow to be triggered
