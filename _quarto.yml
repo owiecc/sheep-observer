@@ -11,10 +11,16 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
+
 format:
   html:
     theme: cosmo
     css: styles.css
-
-
-
+    toc: false
+    minimal: true
+    html-math-method: mathjax
+    header-includes: |
+      <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" type="text/css"/>
+    mainfont: Merriweather
+    fontsize: 1rem
+    linestretch: 1.75
