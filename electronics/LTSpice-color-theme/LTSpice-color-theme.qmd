@@ -2,7 +2,7 @@
 title: "Making LTSpice pretty"
 author: "Szymon Bęczkowski"
 date: "2023-06-24"
-categories: [spice, ltspice]
+categories: [SPICE, LTspice]
 image: "schematic.png"
 ---
 
