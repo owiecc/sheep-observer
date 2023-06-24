@@ -11,6 +11,16 @@ website:
         href: https://en.osm.town/@owiecc
       - icon: github
         href: https://github.com/owiecc
+    left:
+      - text: "programming"
+        icon: terminal
+        file: programming.qmd
+      - text: "electronics"
+        icon: lightning
+        file: electronics.qmd
+      - text: "openstreetmap"
+        icon: map
+        file: openstreetmap.qmd
 
 format:
   html:
