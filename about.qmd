@@ -1,18 +1,24 @@
 ---
-title: "About"
+title: Szymon Bęczkowski
 image: profile.jpg
 about:
-  template: jolla
+  template: broadside
   links:
+    - icon: mastodon
+      text: Mastodon
+      href: https://en.osm.town/@owiecc
     - icon: twitter
       text: Twitter
-      href: https://twitter.com
+      href: https://twitter.com/owiecc
     - icon: linkedin
       text: LinkedIn
-      href: https://linkedin.com
+      href: https://linkedin.com/in/szymon-bęczkowski-730ba153
+    - icon: person-lines-fill
+      text: ORCID
+      href: https://orcid.org/0000-0002-3627-9272
     - icon: github
       text: Github
-      href: https://github.com
+      href: https://github.com/owiecc
 
 ---
 
