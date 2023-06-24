@@ -16,7 +16,7 @@ You can change the default color palette of LTSpice. The default one is very dep
 ![](waveform.png)
 :::
 
-Colors can be changed using GUI or by modifying the values in the [config file](https://www.eevblog.com/forum/eda/where-does-ltspice-keep-its-settings/). Do not try to edit the macOS .plist file as it is just a pretty-printed version of a binary file. 
+Colors can be changed using GUI or by modifying the values in the [config file](https://www.eevblog.com/forum/eda/where-does-ltspice-keep-its-settings/). 
 
 | OS      | path                                            |
 | :------ | :---------------------------------------------- |
