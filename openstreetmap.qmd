@@ -1,5 +1,4 @@
 ---
-title: "sheep-observer-blog"
 listing:
   contents: openstreetmap
   sort: "date desc"
@@ -9,5 +8,3 @@ listing:
   filter-ui: false
 page-layout: full
 ---
-
-
