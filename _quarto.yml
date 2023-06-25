@@ -5,12 +5,6 @@ website:
   title: "Sheep observer"
   site-url: "https://sheep.observer/"
   navbar:
-    right:
-      - about.qmd
-      - icon: mastodon
-        href: https://en.osm.town/@owiecc
-      - icon: github
-        href: https://github.com/owiecc
     left:
       - text: "programming"
         icon: terminal
