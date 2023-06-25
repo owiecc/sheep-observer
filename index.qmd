@@ -1,12 +1,40 @@
 ---
-title: "Index"
-
+title: Szymon Bęczkowski
+image: sheep.svg
+about:
+  template: broadside
+  links:
+    - icon: mastodon
+      text: Mastodon
+      href: https://en.osm.town/@owiecc
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com/owiecc
+    - icon: github
+      text: Github
+      href: https://github.com/owiecc
+    - icon: globe2
+      text: OSM
+      href: https://www.openstreetmap.org/user/owiecc
+    - icon: person-lines-fill
+      text: ORCID
+      href: https://orcid.org/0000-0002-3627-9272
+    - icon: buildings
+      text: Aalborg University
+      href: https://vbn.aau.dk/en/persons/117979
 ---
+## Who am I?
 
-[programming](programming.qmd)
+I am a researcher working on power electronics. I studied electrical engineering on Warasw University of Technology. I did my PhD at Aalborg University, where I currently work as an associate professor. I mostly focus on power converters and power modules. 
 
-[electronics](electronics.qmd)
+As a group we research high power and high voltage power electronics, like medium-voltage SiC technology. We also investigate digital techniques within the field of power electronics. 
 
-[openstreetmap](openstreetmap.qmd)
+## What do I like?
 
-[about](about.qmd)
+Observing sheep. 
+
+In my free time I am contributing to OpenStreetMap. 
+
+I am a strong proponent of modern open source tools. 
+
+Julia is my beloved programming language. I waited many years for LaTeX3 to arrive, finally materialising as Typst. This website is built with Quarto. 
