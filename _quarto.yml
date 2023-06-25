@@ -24,7 +24,7 @@ format:
     minimal: true
     html-math-method: mathjax
     header-includes: |
-      <link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Merriweather" type="text/css"/>
+      <link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Merriweather" type="text/css"/>
     mainfont: Merriweather
     fontsize: 1rem
     linestretch: 1.75
