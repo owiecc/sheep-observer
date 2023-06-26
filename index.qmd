@@ -26,16 +26,16 @@ about:
 ---
 ## Who am I?
 
-I am a researcher working on power electronics. I studied electrical engineering on Warasw University of Technology. I did my PhD at Aalborg University, where I currently work as an associate professor. I mostly focus on power converters and power modules. 
+I am a researcher working on power electronics. I studied electrical engineering at Warsaw University of Technology. I did my PhD at Aalborg University, where I currently work as an associate professor. I mostly focus on power converters and power modules. 
 
-As a group we research high power and high voltage power electronics, like medium-voltage SiC technology. We also investigate digital techniques within the field of power electronics. 
+As a group, we research high power and high voltage power electronics, such as medium-voltage SiC technology. We also investigate digital techniques within the field of power electronics. 
 
 ## What do I like?
 
 Observing sheep. 
 
-In my free time I am contributing to OpenStreetMap. 
+In my free time, I am contributing to OpenStreetMap. 
 
-I am a strong proponent of modern open source tools. 
+I am a strong proponent of modern open-source tools. 
 
-Julia is my beloved programming language. I waited many years for LaTeX3 to arrive, finally materialising as Typst. This website is built with Quarto. 
+Julia is my beloved programming language. I waited many years for LaTeX3 to arrive, finally materialising as Typst. This website is built with Quarto. 
