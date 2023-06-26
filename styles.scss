@@ -1,0 +1,22 @@
+/*-- scss:rules --*/
+
+$red-accent: rgb(187, 11, 11);
+
+div.about-contents {
+    h2 {
+        color: $red-accent;
+        font-size: 1.1rem;
+        font-family: Raleway, sans-serif;
+        text-transform: uppercase;
+    }
+
+    #title-block-header {
+        padding-top: 2rem;
+        color: rgb(160, 160, 160);
+    }
+}
+
+a.about-link {
+    font-weight: bolder;
+    font-family: Raleway, sans-serif;
+}
