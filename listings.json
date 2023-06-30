@@ -1,0 +1,18 @@
+[
+  {
+    "listing": "/electronics.html",
+    "items": [
+      "/electronics/LTSpice-color-theme/LTSpice-color-theme.html"
+    ]
+  },
+  {
+    "listing": "/openstreetmap.html",
+    "items": [
+      "/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html"
+    ]
+  },
+  {
+    "listing": "/programming.html",
+    "items": []
+  }
+]

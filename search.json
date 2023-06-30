@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "electronics.html",
+    "href": "electronics.html",
+    "title": "Sheep observer",
+    "section": "",
+    "text": "Making LTSpice pretty\n\n\n\n\n\n\n\nSPICE\n\n\nLTspice\n\n\n\n\n\n\n\n\n\n\n\nJun 24, 2023\n\n\nSzymon Bęczkowski\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Szymon Bęczkowski",
+    "section": "",
+    "text": "I am a researcher working on power electronics. I studied electrical engineering at Warsaw University of Technology. I did my PhD at Aalborg University, where I currently work as an associate professor. I mostly focus on power converters and power modules.\nAs a group, we research high power and high voltage power electronics, such as medium-voltage SiC technology. We also investigate digital techniques within the field of power electronics."
+  },
+  {
+    "objectID": "index.html#who-am-i",
+    "href": "index.html#who-am-i",
+    "title": "Szymon Bęczkowski",
+    "section": "",
+    "text": "I am a researcher working on power electronics. I studied electrical engineering at Warsaw University of Technology. I did my PhD at Aalborg University, where I currently work as an associate professor. I mostly focus on power converters and power modules.\nAs a group, we research high power and high voltage power electronics, such as medium-voltage SiC technology. We also investigate digital techniques within the field of power electronics."
+  },
+  {
+    "objectID": "index.html#what-do-i-like",
+    "href": "index.html#what-do-i-like",
+    "title": "Szymon Bęczkowski",
+    "section": "What do I like?",
+    "text": "What do I like?\nObserving sheep.\nIn my free time, I am contributing to OpenStreetMap.\nI am a strong proponent of modern open-source tools.\nJulia is my beloved programming language. I waited many years for LaTeX3 to arrive, finally materialising as Typst. This website is built with Quarto."
+  },
+  {
+    "objectID": "openstreetmap.html",
+    "href": "openstreetmap.html",
+    "title": "Sheep observer",
+    "section": "",
+    "text": "Mapping with LIDAR data\n\n\n\n\n\n\n\nimagery\n\n\nLIDAR\n\n\n\n\nLIDAR data can reveal features hidden under forest canopy. It is especially useful for discovering trails and other man-made structures not visible on standard imagery.\n\n\n\n\n\n\nJun 30, 2023\n\n\nSzymon Bęczkowski\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html",
+    "href": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html",
+    "title": "Mapping with LIDAR data",
+    "section": "",
+    "text": "Urban trees, especially big dense ones, are becoming a rare sight in our environment. They provide habitat for many species, offer shade in the summer, combat the heat island effect, reduce stormwater pollution, filter air, absorb noise and are beneficial for our mental health. Despite all these superb benefits I have one bone to pick with them—they block my view from above.\n\n\n\n\n\nThe area you see above is a natural=wood for OSM mapper. There are some quirks on how you map an area like this. OSM wiki mentions six different approaches. Irrespective of the approach taken, one question remains: what is under the trees?\nIf you are lucky, there may be a different map source where the imagery is taken in the winter months, with fewer leaves on the trees. If you are mapping an urban place, you may see GPS traces taken by joggers. That will give you an idea about path locations.\nEnter LIDAR. LIDAR generates a 3D representation of the scanned area using laser pulses. The first practical LIDAR systems date back to the 60s, but until recently, LIDAR was limited in applications. Recent advancements in data processing, have made its use more common.\nIt is now used, for example, to archive heritage sites so that they can be viewed by the future generations. They are also used in agriculture for crop monitoring.\nLIDAR became more widely known by the general public when it was used to discover artifacts of ancient civilisations. These artifacts were, until now, hidden under the canopy of the rainforest. LIDAR scanning revealed a network of settlements within the Amazon forest. Similar to Amazon surveyors, we can now use LIDAR data to reveal hidden objects under the canopy.\n\n\n\n\n\n\n\n\n\n\n\n\nAbove, you see two images of the same forest area, as above, but seen by the LIDAR system. The second image reveals a structure underneath the foliage. In this case, it is a Second World War era hospital bunker that is in the area of a past airport. It is not visible from the air. It is not visible from the road. I only stumbled upon it thanks to geocaching.\nBut how does LIDAR see under the canopy?"
+  },
+  {
+    "objectID": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html#foliage-sucks",
+    "href": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html#foliage-sucks",
+    "title": "Mapping with LIDAR data",
+    "section": "",
+    "text": "Urban trees, especially big dense ones, are becoming a rare sight in our environment. They provide habitat for many species, offer shade in the summer, combat the heat island effect, reduce stormwater pollution, filter air, absorb noise and are beneficial for our mental health. Despite all these superb benefits I have one bone to pick with them—they block my view from above.\n\n\n\n\n\nThe area you see above is a natural=wood for OSM mapper. There are some quirks on how you map an area like this. OSM wiki mentions six different approaches. Irrespective of the approach taken, one question remains: what is under the trees?\nIf you are lucky, there may be a different map source where the imagery is taken in the winter months, with fewer leaves on the trees. If you are mapping an urban place, you may see GPS traces taken by joggers. That will give you an idea about path locations.\nEnter LIDAR. LIDAR generates a 3D representation of the scanned area using laser pulses. The first practical LIDAR systems date back to the 60s, but until recently, LIDAR was limited in applications. Recent advancements in data processing, have made its use more common.\nIt is now used, for example, to archive heritage sites so that they can be viewed by the future generations. They are also used in agriculture for crop monitoring.\nLIDAR became more widely known by the general public when it was used to discover artifacts of ancient civilisations. These artifacts were, until now, hidden under the canopy of the rainforest. LIDAR scanning revealed a network of settlements within the Amazon forest. Similar to Amazon surveyors, we can now use LIDAR data to reveal hidden objects under the canopy.\n\n\n\n\n\n\n\n\n\n\n\n\nAbove, you see two images of the same forest area, as above, but seen by the LIDAR system. The second image reveals a structure underneath the foliage. In this case, it is a Second World War era hospital bunker that is in the area of a past airport. It is not visible from the air. It is not visible from the road. I only stumbled upon it thanks to geocaching.\nBut how does LIDAR see under the canopy?"
+  },
+  {
+    "objectID": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html#how-lidar-works",
+    "href": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html#how-lidar-works",
+    "title": "Mapping with LIDAR data",
+    "section": "How LIDAR works",
+    "text": "How LIDAR works\nA LIDAR detector is flown overhead a terrain and short laser pulses are emitted towards the ground. The system then measures the distance to the surface that the laser targeted. Knowing the position of the senor and laser pulse direction the LIDAR can calculate the position of the object hit by the laser pulse. A 3D point cloud is then slowly built while the laser scans the terrain.\nSometimes, the laser pulse will hit a leaf. Other times, it will accidentally find an opening between leaves and reach the ground. The resulting point cloud then consists of the points that hit the ground surface and points that hit random leaves. By filtering points that are as high and as low as possible, we can then create two images: one including the foliage and one containing only the ground and solid objects."
+  },
+  {
+    "objectID": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html#where-lidar-shines",
+    "href": "openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html#where-lidar-shines",
+    "title": "Mapping with LIDAR data",
+    "section": "Where LIDAR shines",
+    "text": "Where LIDAR shines\nFor OSM mappers, LIDAR is especially useful for discovering and aligning paths in woody areas. The image below looks like a well-mapped nature area with many criss-crossing paths.\n\n\n\n\n\nFootpaths and bike tracks form long troughs on forest beds and are clearly visible on LIDAR imagery. Notice below how many paths are misaligned or just missing.\n\n\n\n\n\n\n\nOther geo features that are clearly visible on LIDAR images are water bodies, streams, embankments and ditches.\nNot all countries have LIDAR data available. I have used Denmark as an example of excelent coverage. The source for the maps used is Styrelsen for Dataforsyning og Infrastruktur (SDFE aerial imagery, SDFE surface shadow map (40 cm) and SDFE terrain shadow map (40 cm)).\nI hope you can use this technique to improve OpenStreetMap. If you are not an OSM editor, you can still use the LIDAR imagery to discover hidden gems in your surrounding area."
+  },
+  {
+    "objectID": "electronics/LTSpice-color-theme/LTSpice-color-theme.html",
+    "href": "electronics/LTSpice-color-theme/LTSpice-color-theme.html",
+    "title": "Making LTSpice pretty",
+    "section": "",
+    "text": "You can change the default color palette of LTSpice. The default one is very depressing. I use a black and white theme with waveforms color scheme from MATLAB.\n\n\n\n\n\n\n\n\n\n\nColors can be changed using GUI or by modifying the values in the config file.\n\n\n\n\n\n\n\nOS\npath\n\n\n\n\nmacOS\n~/Library/Preferences/LTC.LTspice.plist\n\n\nWindows\n%USERPROFILE%\\AppData\\Roaming\\LTspiceXVII.ini\n\n\nLinux\n~/.wine/drive_c/users/$USER/Application\\ Data/LTspiceXVII.ini"
+  },
+  {
+    "objectID": "electronics/LTSpice-color-theme/LTSpice-color-theme.html#color-theme",
+    "href": "electronics/LTSpice-color-theme/LTSpice-color-theme.html#color-theme",
+    "title": "Making LTSpice pretty",
+    "section": "",
+    "text": "You can change the default color palette of LTSpice. The default one is very depressing. I use a black and white theme with waveforms color scheme from MATLAB.\n\n\n\n\n\n\n\n\n\n\nColors can be changed using GUI or by modifying the values in the config file.\n\n\n\n\n\n\n\nOS\npath\n\n\n\n\nmacOS\n~/Library/Preferences/LTC.LTspice.plist\n\n\nWindows\n%USERPROFILE%\\AppData\\Roaming\\LTspiceXVII.ini\n\n\nLinux\n~/.wine/drive_c/users/$USER/Application\\ Data/LTspiceXVII.ini"
+  },
+  {
+    "objectID": "electronics/LTSpice-color-theme/LTSpice-color-theme.html#macos-caveats",
+    "href": "electronics/LTSpice-color-theme/LTSpice-color-theme.html#macos-caveats",
+    "title": "Making LTSpice pretty",
+    "section": "macOS caveats",
+    "text": "macOS caveats\nDo not try to edit the macOS .plist file as it is just a pretty-printed version of a binary file. johan162 made a color theme manager script to simplify theme changes on macOS. The script comes with a few themes. You can add your own theme to the ~/.ltspice_themes/themes.ltt list and set that as default. This is what I use:\n[szymon]\nGridColor=9868950\nInActiveAxisColor=9868950\nWaveColor0=16777215\nWaveColor1=11513775\nWaveColor2=11826975\nWaveColor3=884479\nWaveColor4=2859051\nWaveColor5=2631381\nWaveColor6=12412564\nWaveColor7=4871819\nWaveColor8=12744675\nWaveColor9=8289918\nWaveColor10=2211260\nWaveColor11=13614615\nWaveColor12=128\nWaveColor13=44975\nSchematicColor0=0\nSchematicColor1=2631720\nSchematicColor2=0\nSchematicColor3=0\nSchematicColor4=12648447\nSchematicColor5=0\nSchematicColor6=0\nSchematicColor7=0\nSchematicColor8=9868950\nSchematicColor9=0\nSchematicColor10=11210240\nSchematicColor11=16777215\nSchematicColor12=16777215\nNetlistEditorColor0=0\nNetlistEditorColor1=32512\nNetlistEditorColor2=16711680\nNetlistEditorColor3=155\nNetlistEditorColor4=16777215"
+  },
+  {
+    "objectID": "programming.html",
+    "href": "programming.html",
+    "title": "Sheep observer",
+    "section": "",
+    "text": "I am not a programmer. I dabble in programming.\nStarted with Pascal and BASIC in the previous century. Learned basics of C at the universtity. Had a short affair with Ruby when Rails was popular. Chunky bacon. Tried Objective-C but gave up easily. Drew LabView because it connected to all the measurement gear around. Wrote some C++ for my beloved DSP processor. Did MATLAB for many years because of academic pressure, got good at it, dropped it for Julia. Licked some LISP but it tased of unclosed parentheses. Got my head blown by Haskell. Currently APL curious because it looks beautiful but not curious enough to actually do anything about it.\nI treat programming languages like bicycles. You can never have too many.\n\n\n\n\n\n\n\n\n\nNo matching items"
+  }
+]
