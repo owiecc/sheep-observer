@@ -63,6 +63,13 @@
     "text": "Where LIDAR shines\nFor OSM mappers, LIDAR is especially useful for discovering and aligning paths in woody areas. The image below looks like a well-mapped nature area with many criss-crossing paths.\n\n\n\n\n\nFootpaths and bike tracks form long troughs on forest beds and are clearly visible on LIDAR imagery. Notice below how many paths are misaligned or just missing.\n\n\n\n\n\n\n\nOther geo features that are clearly visible on LIDAR images are water bodies, streams, embankments and ditches.\nNot all countries have LIDAR data available. I have used Denmark as an example of excelent coverage. The source for the maps used is Styrelsen for Dataforsyning og Infrastruktur (SDFE aerial imagery, SDFE surface shadow map (40 cm) and SDFE terrain shadow map (40 cm)).\nI hope you can use this technique to improve OpenStreetMap. If you are not an OSM editor, you can still use the LIDAR imagery to discover hidden gems in your surrounding area."
   },
   {
+    "objectID": "all.html",
+    "href": "all.html",
+    "title": "Sheep observer",
+    "section": "",
+    "text": "Mapping with LIDAR data\n\n\n\n\n\n\n\nimagery\n\n\nLIDAR\n\n\n\n\nLIDAR data can reveal features hidden under forest canopy. It is especially useful for discovering trails and other man-made structures not visible on standard imagery.\n\n\n\n\n\n\nJun 30, 2023\n\n\nSzymon Bęczkowski\n\n\n\n\n\n\n  \n\n\n\n\nMaking LTSpice pretty\n\n\n\n\n\n\n\nSPICE\n\n\nLTspice\n\n\n\n\n\n\n\n\n\n\n\nJun 24, 2023\n\n\nSzymon Bęczkowski\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "electronics/LTSpice-color-theme/LTSpice-color-theme.html",
     "href": "electronics/LTSpice-color-theme/LTSpice-color-theme.html",
     "title": "Making LTSpice pretty",

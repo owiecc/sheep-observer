@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>Sheep observer</title>
+<link>https://sheep.observer/openstreetmap.html</link>
+<atom:link href="https://sheep.observer/openstreetmap.xml" rel="self" type="application/rss+xml"/>
+<description>Szymon Bęczkowski&#39;s blog</description>
+<generator>quarto-1.3.433</generator>
+<lastBuildDate>Thu, 29 Jun 2023 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Mapping with LIDAR data</title>
+  <dc:creator>Szymon Bęczkowski</dc:creator>
+  <link>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html</link>
+  <description><![CDATA[ 
+
+
+
+<section id="foliage-sucks" class="level2 page-columns page-full">
+<h2 data-anchor-id="foliage-sucks">Foliage sucks</h2>
+<p>Urban trees, especially big dense ones, are becoming a rare sight in our environment. They provide habitat for many species, offer shade in the summer, combat the heat island effect, reduce stormwater pollution, filter air, absorb noise and are beneficial for our mental health. Despite all these superb benefits I have one bone to pick with them—they block my view from above.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+</figure>
+</div>
+<p>The area you see above is a <code>natural=wood</code> for OSM mapper. There are some quirks on how you map an area like this. OSM wiki mentions <a href="https://wiki.openstreetmap.org/wiki/Forest#Which_tag_should_be_used?">six different approaches</a>. Irrespective of the approach taken, one question remains: what is under the trees?</p>
+<p>If you are lucky, there may be a different map source where the imagery is taken in the winter months, with fewer leaves on the trees. If you are mapping an urban place, you may see GPS traces taken by joggers. That will give you an idea about path locations.</p>
+<p>Enter LIDAR. LIDAR generates a 3D representation of the scanned area using laser pulses. The first practical LIDAR systems date back to the 60s, but until recently, LIDAR was limited in&nbsp;applications. Recent advancements in data processing, have made its use more common.</p>
+<p>It is now used, for example, to archive heritage sites so that they can be viewed by the future generations. They&nbsp;are also used in agriculture for crop monitoring.</p>
+<p>LIDAR became more widely known by the general public when it was used to <a href="https://www.smithsonianmag.com/science-nature/lost-cities-of-the-amazon-discovered-from-the-air-180980142/">discover artifacts</a> of <a href="https://www.youtube.com/watch?v=dphq5X-rMew">ancient civilisations</a>. These artifacts were, until now, hidden under the canopy of the rainforest. LIDAR scanning revealed a network of settlements within the Amazon forest. Similar to Amazon surveyors, we can now use LIDAR data to reveal hidden objects under the canopy.</p>
+<div class="column-page">
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg" alt="LIDAR view of forrest with visible foliage."></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-LIDAR-terrain.jpg" alt="LIDAR view of terrain under forest. Foliage not visible."></p>
+</div>
+</div>
+</div>
+</div>
+<p>Above, you see two images of the same forest area, as above, but seen by the LIDAR system. The second image reveals a structure underneath the foliage. In this case, it is a Second World War era hospital bunker that is in the area of a past airport. It is not visible from the air. It is not visible from the road. I only stumbled upon it thanks to geocaching.</p>
+<p>But how does LIDAR see under the canopy?</p>
+</section>
+<section id="how-lidar-works" class="level2">
+<h2 data-anchor-id="how-lidar-works">How LIDAR works</h2>
+<p>A LIDAR detector is flown overhead a terrain and short laser pulses are emitted towards the ground. The system then measures the distance to the surface that the laser targeted. Knowing the position of the senor and laser pulse direction the LIDAR can calculate the position&nbsp;of the object hit by the laser pulse. A&nbsp;3D point cloud is then slowly built while the laser scans the terrain.</p>
+<p>Sometimes, the laser pulse will hit a&nbsp;leaf. Other times, it will accidentally find an opening between leaves and reach the&nbsp;ground. The resulting point cloud then consists of the points that hit the ground surface and points that hit random leaves. By filtering points that are as high and as low as possible, we can then create two images: one including the foliage and one containing only the ground and solid&nbsp;objects.</p>
+</section>
+<section id="where-lidar-shines" class="level2 page-columns page-full">
+<h2 data-anchor-id="where-lidar-shines">Where LIDAR shines</h2>
+<p>For OSM mappers, LIDAR is especially useful for discovering and aligning paths in woody areas. The&nbsp;image below looks like a well-mapped nature area with many criss-crossing paths.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+</figure>
+</div>
+<p>Footpaths and bike tracks form long troughs on forest beds and are clearly visible on LIDAR imagery. Notice below how many paths are misaligned or just missing.</p>
+<div class="column-body-outset">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg" style="width:100.0%" alt="Aerial view of forrest." class="figure-img"></p>
+</figure>
+</div>
+</div>
+<p>Other geo features that are clearly visible on LIDAR images are water bodies, streams, embankments and ditches.</p>
+<p>Not all countries have LIDAR data available. I have used Denmark as an example of excelent coverage. The source for the maps used is Styrelsen for Dataforsyning og Infrastruktur (SDFE aerial imagery, SDFE surface shadow map (40 cm) and SDFE terrain shadow map (40 cm)).</p>
+<p>I hope you can use this technique to improve OpenStreetMap. If you are not an OSM editor, you can still use the LIDAR imagery to discover hidden gems in your surrounding area.</p>
+
+
+</section>
+
+ ]]></description>
+  <category>imagery</category>
+  <category>LIDAR</category>
+  <guid>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html</guid>
+  <pubDate>Thu, 29 Jun 2023 22:00:00 GMT</pubDate>
+  <media:content url="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg" medium="image" type="image/jpeg"/>
+</item>
+</channel>
+</rss>

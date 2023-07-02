@@ -2,26 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sheep.observer/electronics.html</loc>
-    <lastmod>2023-06-30T20:06:23.384Z</lastmod>
+    <lastmod>2023-07-02T10:00:10.063Z</lastmod>
   </url>
   <url>
     <loc>https://sheep.observer/index.html</loc>
-    <lastmod>2023-06-30T20:06:22.770Z</lastmod>
+    <lastmod>2023-07-02T10:00:09.447Z</lastmod>
   </url>
   <url>
     <loc>https://sheep.observer/openstreetmap.html</loc>
-    <lastmod>2023-06-30T20:06:22.146Z</lastmod>
+    <lastmod>2023-07-02T10:00:08.844Z</lastmod>
   </url>
   <url>
     <loc>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html</loc>
-    <lastmod>2023-06-30T20:06:21.775Z</lastmod>
+    <lastmod>2023-07-02T10:00:08.065Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sheep.observer/all.html</loc>
+    <lastmod>2023-07-02T10:00:08.500Z</lastmod>
   </url>
   <url>
     <loc>https://sheep.observer/electronics/LTSpice-color-theme/LTSpice-color-theme.html</loc>
-    <lastmod>2023-06-30T20:06:22.464Z</lastmod>
+    <lastmod>2023-07-02T10:00:09.156Z</lastmod>
   </url>
   <url>
     <loc>https://sheep.observer/programming.html</loc>
-    <lastmod>2023-06-30T20:06:23.058Z</lastmod>
+    <lastmod>2023-07-02T10:00:09.733Z</lastmod>
   </url>
 </urlset>

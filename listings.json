@@ -12,6 +12,13 @@
     ]
   },
   {
+    "listing": "/all.html",
+    "items": [
+      "/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html",
+      "/electronics/LTSpice-color-theme/LTSpice-color-theme.html"
+    ]
+  },
+  {
     "listing": "/programming.html",
     "items": []
   }
