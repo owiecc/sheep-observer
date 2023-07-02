@@ -6,7 +6,11 @@ project:
 website:
   title: "Sheep observer"
   site-url: "https://sheep.observer/"
+  description: "Szymon Bęczkowski's blog"
   navbar:
+    right:
+      - icon: rss
+        href: all.xml
     left:
       - text: "programming"
         icon: terminal

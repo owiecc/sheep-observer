@@ -1,6 +1,6 @@
 ---
 listing:
-  contents: openstreetmap
+  contents: [electronics,programming,openstreetmap]
   sort: "date desc"
   type: default
   categories: true
