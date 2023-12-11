@@ -26,7 +26,7 @@ treb7uchet
 """
 ```
 
-## Splitting ~~hair~~ lines
+## Interlude I: splitting ~~hair~~ lines
 
 Text manipulation is a basic problem in programming. Almost every programming language will have built-in primitives for handling this task. 
 
@@ -117,11 +117,38 @@ end
 parse(Int, number)
 ```
 
-The code is now a bit prettier but it still looks repetitive and quite verbose. The first loop looks for the first numeric character; the second loop looks for the last numeric character. Conceptually they do almost the same job. 
+The code is now a bit prettier but it still looks repetitive and quite verbose. The first loop looks for the first numeric character; the second loop looks for the last numeric character. Conceptually they do almost the same job. They iterate over a collection of characters until they find a digit. 
+
+What if we first remove all the letters (non-digits) from the string? Then our search for digits will be much simpler. So how do we go from `"a1b2c3d4e5f"` to `"12345"`? 
+
+## Interlude II: map filter reduce
+
+The three functions: `map`, `filter` and `reduce` are the [workhorse](https://en.wikipedia.org/wiki/Functional_programming#Imperative_vs._functional_programming) of [functional programming](https://en.wikipedia.org/wiki/Functional_programming). 
+
+- `map` applies a function element-wise to a collection
+- `filter` yields a sub-collection based on some element criteria
+- `reduce` accumulates an output based on subsequent elements
+
+These three function can do a lot. 
 
 ```{julia}
+function clip(x, x_min=-0.5, x_max=0.5)
+    if x > x_max return x_max end
+    if x < x_min return x_min end
+    return x
+end
 
+@show clip(-1)
+@show clip(0)
+@show clip(0.7)
 
+x = -π:0.01:π
+y = sin.(x)
+y_clipped = map(clip, y) # ← map does the heavy lifting here
+
+using Plots
+plot(x, y, label="sin(x)", xticks=(-π:π:π,["-π","0","π"]))
+plot!(x, y_clipped, label="clip(sin(x))")
 ```
 
 ```{mermaid}
