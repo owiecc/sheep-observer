@@ -246,7 +246,7 @@ There are two important things that happen here. `(first, last)` is a tuple of f
 Julia has many ways of joining things into some form of collection: tuples, named tuples, arrays, dictionaries, structs, …. You can thing of tuples as a glue that joins anything without much boilerplate. They are really usefull when joining things for a moment, just as we need here. 
 
 The dot is the broadcast operator. `.|>` is a way of piping the data into multiple things at once, broadcasting data into individual inputs. 
-It works in the same way as `cos.([π,π])`. Here two pies are shoved into a cosine even though cosine function can only handle one number at a time. 
+It works in the same way as `cos.([π,π])`. Here two pies are shoved into a cosine even though cosine function can only handle one pie at a time. 
 
 ```{mermaid}
 flowchart LR
