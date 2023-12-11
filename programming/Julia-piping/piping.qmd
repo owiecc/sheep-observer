@@ -79,7 +79,7 @@ end
 
 @show number
 
-cal_value = parse(Int, number)
+parse(Int, number)
 ```
 
 It works but is also suuuuper long. If you use e.g. VSCode, some of the code will be underlined with a squigly line. It is Julia's linter telling us that:
@@ -231,28 +231,56 @@ There is a small problem, however. There functions take one input and return one
 ```{mermaid}
 flowchart LR
   Input(cal_line):::data --> Filter[filter numbers]
-  Filter --> First[get first number] & Last[get last number] --> Sum[sum] --> Result(cal_number):::data
+  Filter --> First[get first number] & Last[get last number] --> Join[join] --> Result(cal_number):::data
   classDef data fill:#C5F4E0
 ```
 
-We can massage our flow diagram and use Julia's [broadcasting](https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting) mechanism. 
+We can massage our flow diagram and use Julia's [broadcasting](https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting) mechanism until we get a nice straingt diagram: 
+
+```{mermaid}
+flowchart LR
+  Input(cal_line):::data --> Filter[filter numbers]
+  Filter -.-> Numbers[[get first and last numbers]] -.-> Join[join] --> Result(cal_number):::data
+  classDef data fill:#C5F4E0
+```
+
+### Massaging the chain
 
 ```{julia}
 filter(isdigit, cal_line) .|> (first, last)
 ```
 
-There are two important things that happen here. `(first, last)` is a tuple of functions. Essentially a collection of functions. 
+There are two important things that happen here. `(first, last)` is a tuple (collection) of functions. 
 
 Julia has many ways of joining things into some form of collection: tuples, named tuples, arrays, dictionaries, structs, …. You can thing of tuples as a glue that joins anything without much boilerplate. They are really usefull when joining things for a moment, just as we need here. 
 
 The dot is the broadcast operator. `.|>` is a way of piping the data into multiple things at once, broadcasting data into individual inputs. 
 It works in the same way as `cos.([π,π])`. Here two pies are shoved into a cosine even though cosine function can only handle one pie at a time. 
 
-```{mermaid}
-flowchart LR
-  Input(cal_line):::data --> Filter[filter numbers]
-  Filter -.-> Numbers[get first and last numbers] -.-> Sum[sum] --> Result(cal_number):::data
-  classDef data fill:#C5F4E0
+Now we do have our first and last digits but they still are in a character form. We need to convert them to numbers. As you notice, the output of the previous operation is `('1', '5')` This is a tuple of chars. A `join` function can create a string out of that. 
+
+```{julia}
+filter(isdigit, cal_line) .|> (first, last) |> join
+```
+
+This string should be interpreted as a Int number. `parse` function can do that for us but it needs two inputs: _what_ to parse and _how_ to parse it. If we want to use it in our nice flow code we need to bake in one of the inputs.
+
+```{julia}
+parseint(number) = parse(Int, number)
+filter(isdigit, cal_line) .|> (first, last) |> join |> parseint
+```
+
+As with variables we can get rid of naming this temporary function by using an anonymous function. 
+
+```{julia}
+filter(isdigit, cal_line) .|> (first, last) |> join |> n -> parse(Int, n)
+```
+
+## Solution to the problem
+
+```{julia}
+cal_value(line) = filter(isdigit, line) .|> (first, last) |> join |> n -> parse(Int, n)
+eachline(IOBuffer(calibration)) .|> cal_value |> sum
 ```
 
 ## Takeaways
