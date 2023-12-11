@@ -235,6 +235,26 @@ flowchart LR
   classDef data fill:#C5F4E0
 ```
 
+We can massage our flow diagram and use Julia's [broadcasting](https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting) mechanism. 
+
+```{julia}
+filter(isdigit, cal_line) .|> (first, last)
+```
+
+There are two important things that happen here. `(first, last)` is a tuple of functions. Essentially a collection of functions. 
+
+Julia has many ways of joining things into some form of collection: tuples, named tuples, arrays, dictionaries, structs, …. You can thing of tuples as a glue that joins anything without much boilerplate. They are really usefull when joining things for a moment, just as we need here. 
+
+The dot is the broadcast operator. `.|>` is a way of piping the data into multiple things at once, broadcasting data into individual inputs. 
+It works in the same way as `cos.([π,π])`. Here two pies are shoved into a cosine even though cosine function can only handle one number at a time. 
+
+```{mermaid}
+flowchart LR
+  Input(cal_line):::data --> Filter[filter numbers]
+  Filter -.-> Numbers[get first and last numbers] -.-> Sum[sum] --> Result(cal_number):::data
+  classDef data fill:#C5F4E0
+```
+
 ## Takeaways
 
 ### Look for patterns in the problem
