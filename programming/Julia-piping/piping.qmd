@@ -61,7 +61,7 @@ number = ""
 
 for i in 1:length(cal_line)
     s = cal_line[i]
-    if isnumeric(s)
+    if isdigit(s)
         number = number * s
         break
     end
@@ -71,7 +71,7 @@ end
 
 for i in length(cal_line):-1:1
     s = cal_line[i]
-    if isnumeric(s)
+    if isdigit(s)
         number = number * s
         break
     end
@@ -97,7 +97,7 @@ number = ""
 @show number
 
 for s in cal_line
-    if isnumeric(s)
+    if isdigit(s)
         number = number * s
         break
     end
@@ -106,7 +106,7 @@ end
 @show number
 
 for s in reverse(cal_line)
-    if isnumeric(s)
+    if isdigit(s)
         number = number * s
         break
     end
@@ -116,6 +116,8 @@ end
 
 parse(Int, number)
 ```
+
+The code is now a bit prettier but it still looks repetitive and quite verbose. The first loop looks for the first numeric character; the second loop looks for the last numeric character. Conceptually they do almost the same job. 
 
 ```{julia}
 
