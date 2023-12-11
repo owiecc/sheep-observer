@@ -151,11 +151,88 @@ plot(x, y, label="sin(x)", xticks=(-π:π:π,["-π","0","π"]))
 plot!(x, y_clipped, label="clip(sin(x))")
 ```
 
+## Let the data flow
+
+First lets use the newly acquired power to get rid of the letters in our line. Any function that returns a `Boolean` can be used inside a `filter`. 
+
+```{julia}
+cal_digits = filter(isdigit, cal_line)
+```
+
+Notice we do not give any input to the `isdigit` function. `filter` does that for us. It applies this function to every element of the collection and if the Answer is `True` the corresponding element gets to live a bit longer in the new, filtered collection. 
+
+We can now extract the first and last numbers from this new string. 
+
+```{julia}
+first_cal_digit = first(cal_digits)
+last_cal_digit = last(cal_digits)
+cal_number = first_cal_digit * last_cal_digit
+parse(Int, cal_number)
+```
+
+We have a pretty short code. More importanetly it is self documenting. Variable names clearly communicate what our intention was. I, however, don't like it. `first_cal_digit` variable name just repeats what `first(cal_digits)` communicates. Moreover its life is pretty short. We don't really need it. These short-lived variables can be ommited by nested function calls: 
+
+```{julia}
+first(filter(isdigit, cal_line))
+```
+
+However, nesting has a nasty habit of creating a sea of parentheses
+
+```{julia}
+#| eval: false
+make(something(important(with(this(data)))))
+```
+
+This was typically remedied by [Rainbow Brackets](https://marketplace.visualstudio.com/items?itemName=2gua.rainbow-brackets). But there are better solutions. 
+
+One is function compositions. Imagine glueing output of one function to the input of another function. This allows us to create new function without the need for intermediate variables.
+
+```{julia}
+#| eval: false
+function_chain = make ∘ something ∘ important ∘ with ∘ this
+function_chain(data)
+```
+
+or by piping the `data`
+
+```{julia}
+#| eval: false
+data |> this |> with |> important |> something |> make
+```
+
+Notice how the operation order "reverses". The execution order does not change. With chained functions the last function in the chain would operate on the data first. Some languages allow for piping `<|` both ways `|>. Julia does not. 
+
+```{julia}
+filter(isdigit, cal_line) |> first
+```
+
+This is a neat way of piping data through a chain of functions
+
+```{julia}
+#| eval: false
+output = data |> massage |> this |> into |> something |> different
+```
+
+We can also express this as a function chain:
+
+```{julia}
+#| eval: false
+output = data |> massage |> this |> into |> something |> different
+```
+
 ```{mermaid}
 flowchart LR
-  input[(line)]:::data --> Filter(filter numbers)
-  Filter --> First[Get first number] & Last[Get last number] --> Sum[sum] --> Result
-  classDef data fill:#f96
+  Input(data):::data --> A[massage] --> B[this] --> C[into] --> D[something] --> E[different] --> Result(output):::data
+  classDef data fill:#C5F4E0
+```
+
+There is a small problem, however. There functions take one input and return one output. We need to extract two things: first and last digit. Then we need to sum the two numbers. 
+
+```{mermaid}
+flowchart LR
+  Input(cal_line):::data --> Filter[filter numbers]
+  Filter --> First[get first number] & Last[get last number] --> Sum[sum] --> Result(cal_number):::data
+  classDef data fill:#C5F4E0
 ```
 
 ## Takeaways
