@@ -35,8 +35,8 @@ Julia's function `eachline` can be conveninently used to break a string into ind
 > To iterate over each line of a String, eachline(IOBuffer(str)) can be used.
 
 ```{julia}
-for line in eachline(IOBuffer(calibration))
-    @show line
+for calibration_line in eachline(IOBuffer(calibration))
+    @show calibration_line
 end
 ```
 
@@ -44,13 +44,14 @@ Now that we know we can easily split the `calibration` string into individual li
 
 ## The actual problem
 
+Looking within individual line, our problem can now be states as: given a string, extract first and last digit; join the two digits to form a two-digit number. 
+
+Let's take one of the lines above and use it as a test case. 
 
 ```{julia}
-y = π |> sin
-
-```
-
-<!-- Initialize with any icon {{< fa thumbs-up >}} -->
+#| output: false
+calibration_line = "a1b2c3d4e5f"
+``'
 
 ```{mermaid}
 flowchart LR
