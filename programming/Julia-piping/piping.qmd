@@ -1,0 +1,74 @@
+---
+title: Piping
+lang: en
+author: "Szymon Bęczkowski"
+date: "2023-12-11"
+categories: [Julia,functional programming]
+description: "Piping is cool, m'kay?"
+jupyter: julia-1.9
+---
+
+How to structure code. Data flow. Transformations. 
+
+[Advent of code](https://adventofcode.com) is a quaint site that posts one programming problem a day just before Christmas. Just so we can flex our programming muscle. More importanetly, so we can eavsdrop on other people's code. 
+
+## The problem
+
+Advent of code [day one problem](https://adventofcode.com/2023/day/1). It bois down to: given a string, extract first and last digit in each line; join the two digits to form a two-digit number and add all resulting numbers. 
+
+```{julia}
+#| output: false
+calibration = """
+1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet
+"""
+```
+
+## Splitting ~~hair~~ lines
+
+Text manipulation is a basic problem in programming. Almost every programming language will have built-in primitives for handling this task. 
+
+Julia's function `eachline` can be conveninently used to break a string into individual lines. However, if we pass our `calibration` variable into `eachline` we will get an error. Fortunately, the [docs](https://docs.julialang.org/en/v1/base/io-network/#Base.eachline) help us out: 
+
+> To iterate over each line of a String, eachline(IOBuffer(str)) can be used.
+
+```{julia}
+for line in eachline(IOBuffer(calibration))
+    @show line
+end
+```
+
+Now that we know we can easily split the `calibration` string into individual lines we "only" need to extract the two-digit numbers from them. Adding them is easy. 
+
+## The actual problem
+
+
+```{julia}
+y = π |> sin
+
+```
+
+<!-- Initialize with any icon {{< fa thumbs-up >}} -->
+
+```{mermaid}
+flowchart LR
+  input[(line)]:::data --> Filter(filter numbers)
+  Filter --> First[Get first number] & Last[Get last number] --> Sum[sum] --> Result
+  classDef data fill:#f96
+```
+
+## Takeaways
+
+### Look for patterns in the problem
+
+Someone has done the boilerplate code for you
+Map filter reduce
+
+### Break the problem into smaller problems
+
+Smaller problem = less things to keep in your head at a time
+TDD
+Parallel work
+Modularity
