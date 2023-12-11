@@ -90,11 +90,31 @@ A linter is a tool that continously checks your code for possible errors and [an
 
 Instead of creating a vector of indexes `1:length(cal_line)` we can just ask for it: `eachindex(cal_line)` and for the second case: `Iterators.reverse(eachindex(cal_line))`. This is advisable because arrays in Julia can have arbitrary indexes. Forget about the war between [0-based](https://en.wikipedia.org/wiki/Zero-based_numbering) and 1-based indexing in programming. Embrace [Star Wars movies order indexing](https://github.com/giordano/StarWarsArrays.jl). 
 
-
+Notice that we did not use the `i` variable for anything other than indexing an element of the input string. We should take advante of the fact that we can just iterate over anything that is iterable. Any `String` or `Array` or similar data structure is. If a data structure can be described similar to: _a string is a collection of characters_ or _an array is a collection of numbers_ then it most likely is iterable. 
 
 ```{julia}
+number = ""
+@show number
 
+for s in cal_line
+    if isnumeric(s)
+        number = number * s
+        break
+    end
+end
 
+@show number
+
+for s in reverse(cal_line)
+    if isnumeric(s)
+        number = number * s
+        break
+    end
+end
+
+@show number
+
+parse(Int, number)
 ```
 
 ```{julia}
