@@ -1,19 +1,21 @@
 ---
-title: Piping
+title: A short introduction to functional programming in Julia
 lang: en
 author: "Szymon Bęczkowski"
-date: "2023-12-11"
+date: "2023-12-12"
 categories: [Julia, functional programming, Advent of Code]
-description: "A short introduction to functional programming in Julia."
+description: "How to structure the code using nothing but circles and pipes."
 jupyter: julia-1.9
 reference-location: margin
 ---
 
-[Advent of code](https://adventofcode.com) is a quaint site that posts one programming problem a day just before Christmas. Just so we can flex our programming muscle. More importanetly, so we can eavsdrop on other people's code. Looking at some of the solutions motivated me to write this tutorial. A lot of people start learning programming with C++ or MATLAB. This inevitably leads to a very verbose and error-prone code. I'd like to show how here how modern programming practices and a good language can help making the solution elegant and maintainable. 
+[Advent of code](https://adventofcode.com) is a quaint site that posts one programming problem each day just before Christmas. Just so we can flex our programming muscle. More importanetly, we can eavsdrop on other people's code. Looking at some of the solutions motivated me to write this tutorial. 
+
+A lot of people start learning programming with C++ or MATLAB. This inevitably leads to a very verbose and error-prone code. In this tutorial, I aim to illustrate how modern programming practices and a good language can lead to elegant solutions and maintainable code. 
 
 ## The problem
 
-Advent of code [day one problem](https://adventofcode.com/2023/day/1). It bois down to: given a string, extract first and last digit in each line; join the two digits to form a two-digit number and add all resulting numbers. 
+Advent of code [day one problem](https://adventofcode.com/2023/day/1). The problem boils down to: given a string, extract first and last digits in each line; join the two digits to form a two-digit number and add all resulting numbers. 
 
 ```{julia}
 #| output: false
@@ -27,9 +29,9 @@ treb7uchet
 
 ## Interlude I: splitting ~~hair~~ lines
 
-Text manipulation is a basic problem in programming. Almost every programming language will have built-in primitives for handling this task. 
+Text manipulation is a fundamental challenge in programming, and nearly every programming language provides built-in primitives for this purpose. 
 
-Julia's function `eachline` can be conveninently used to break a string into individual lines. However, if we pass our `calibration` variable into `eachline` we will get an error. Fortunately, the [docs](https://docs.julialang.org/en/v1/base/io-network/#Base.eachline) help us out: 
+Julia's function `eachline` is a conveninent tool for splitting a string into individual lines. However, attempting to pass our `calibration` variable into `eachline` we will result in an error. Fortunately, the [docs](https://docs.julialang.org/en/v1/base/io-network/#Base.eachline) provide guidance on this issue: 
 
 > To iterate over each line of a String, eachline(IOBuffer(str)) can be used.
 
@@ -39,7 +41,7 @@ for cal_line in eachline(IOBuffer(calibration))
 end
 ```
 
-Now that we know we can easily split the `calibration` string into individual lines we "only" need to extract the two-digit numbers from them. Adding them is easy. 
+Now that we understand how to split the `calibration` string into individual lines, the next step is to "simpy" extract the two-digit numbers from each line. Adding them is straightforward. 
 
 ## The actual problem
 
