@@ -203,13 +203,23 @@ Similar solution can also be achieved by piping the `data` with a `|>` (pipe) op
 data |> this |> with |> important |> something |> make
 ```
 
-Notice how the flow of data changes direction. The input data, on the left, is piped through successive functions. It's important to emphasize that the execution order remains unchanged. With composed functions, the last function in the chain would operate on the data first. Some languages allow for piping `<|` both ways `|>`. Julia does not. 
+Notice how the flow of data changes direction. The input data, on the left, is piped through successive functions. It's important to emphasize that the execution order remains unchanged. With composed functions, the last function in the chain would operate on the data first. 
+
+Some languages allow for piping `<|` both ways `|>`. Julia does not. This can lead to some confusing code if `|>` and `∘` are used together. 
+
+```{julia}
+π |> round ∘ sin
+```
+
+`π` is first applied to `sin` and the result is then rounded. 
+
+We can use piping to find the first digit in our filtered string: 
 
 ```{julia}
 filter(isdigit, cal_line) |> first
 ```
 
-Piping is a neat way of pushing data through a chain of operations.
+As you can see, piping is a neat way of pushing data through a chain of operations.
 
 ```{julia}
 #| eval: false
@@ -222,7 +232,7 @@ flowchart LR
   classDef data fill:#C5F4E0
 ```
 
-There is, however, a small problem. There functions take one input and return one output. We need to extract two things: first and last digit. Then we need to sum the two numbers. 
+There is, however, a small problem. These functions take one input and return one output. Yet, our task involves extracting two things: the first and last digits. Subsequently, we need to sum these two numbers.
 
 ```{mermaid}
 flowchart LR
@@ -231,7 +241,7 @@ flowchart LR
   classDef data fill:#C5F4E0
 ```
 
-We can massage our flow diagram and use Julia's [broadcasting](https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting) mechanism until we get a nice straingt diagram: 
+We can massage our flow diagram, using Julia's [broadcasting](https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting) mechanism, until we get a nice straight diagram: 
 
 ```{mermaid}
 flowchart LR
@@ -246,14 +256,15 @@ flowchart LR
 filter(isdigit, cal_line) .|> (first, last)
 ```
 
-There are two important things that happen here. `(first, last)` is a tuple (collection) of functions. 
+Two crucial things happen here. First, `(first, last)` is a tuple (collection) of functions. 
 
-Julia has many ways of joining things into some form of collection: tuples, named tuples, arrays, dictionaries, structs, …. You can thing of tuples as a glue that joins anything without much boilerplate. They are really usefull when joining things for a moment, just as we need here. 
+Julia offers many ways of grouping things into a some form of collection: tuples, named tuples, arrays, dictionaries, structs, …. You can thing of tuples as a versatile container that holds multiple things without much boilerplate. They prove especially usefull when joining things for a moment, just as we need here. 
 
-The dot is the broadcast operator. `.|>` is a way of piping the data into multiple things at once, broadcasting data into individual inputs. 
-It works in the same way as `cos.([π,π])`. Here two pies are shoved into a cosine even though cosine function can only handle one pie at a time. 
+The dot represents a broadcast operator. `.|>` is a way of piping the data into multiple things at once, broadcasting data into individual inputs. 
 
-Now we do have our first and last digits but they still are in a character form. We need to convert them to numbers. As you notice, the output of the previous operation is `('1', '5')` This is a tuple of chars. A `join` function can create a string out of that. 
+It functions similarly as `cos.([π,π])`, where two pies are shoved into a cosine even though the cosine function can only handle one pie at a time. 
+
+Now we do have our first and last digits captured, but they still are in a character form. We need to convert them to numbers. As you may observe, the output of the previous operation is `('1', '5')` This is a tuple of characters. A `join` function can create a string out of that. 
 
 ```{julia}
 filter(isdigit, cal_line) .|> (first, last) |> join
