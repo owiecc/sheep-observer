@@ -296,10 +296,10 @@ twofold(5)
 Most common use of these anonymous functions is existence in a chain of functions or being passed to another function. 
 
 ```{julia}
-map(x->2x, [1,2,3]) # ← x->2x is our anonymous function 
+map(x->2x, [1,2,3]) # ← x->2x is an anonymous function that is passed to a map function
 ```
 
-We will use it to parse a string to an integer. 
+We will use this technique to parse a string to an integer. Now, the line parsing is complete. 
 
 ```{julia}
 filter(isdigit, cal_line) .|> (first, last) |> join |> n -> parse(Int, n)
@@ -307,9 +307,11 @@ filter(isdigit, cal_line) .|> (first, last) |> join |> n -> parse(Int, n)
 
 ## Solution to the problem
 
+We can now put all the pieces to solve the Advent of Code day 1 problem. We take the line parser we just wrote and wrap it in a function so we can parse any line we throw at it. Then we just need to take our `calibration` string and, for each line, extract a calibration value. The sum of all calibration values is our answer. 
+
 ```{julia}
 cal_value(line) = filter(isdigit, line) .|> (first, last) |> join |> n -> parse(Int, n)
-eachline(IOBuffer(calibration)) .|> cal_value |> sum
+IOBuffer(calibration) |> eachline .|> cal_value |> sum
 ```
 
 ## Takeaways
