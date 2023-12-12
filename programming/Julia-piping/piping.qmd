@@ -308,29 +308,31 @@ Most common use of these anonymous functions is existence in a chain of function
 map(x->2x, [1,2,3]) # x->2x is an anonymous function that is passed to a map function
 ```
 
-We will use this technique to parse a string to an integer. Now, the line parsing is complete. 
+We will leverage this technique to parse a string into an integer. Now, the line parsing is complete. 
 
 ```{julia}
 filter(isdigit, cal_line) .|> (first, last) |> join |> n -> parse(Int, n)
 ```
 
-## Solution to the problem
+## Answer to the problem
 
-We can now put all the pieces to solve the Advent of Code day 1 problem. We take the line parser we just wrote and wrap it in a function so we can parse any line we throw at it. Then we just need to take our `calibration` string and, for each line, extract a calibration value. The sum of all calibration values is our answer. 
+We can now assemble all the pieces to solve the Advent of Code day 1 problem. We take the line parser we just wrote and wrap it in a function so we can parse any line we throw at it. Then, for each line in our `calibration` string, extract a calibration value. The sum of all calibration values is our answer. 
 
 ```{julia}
 cal_value(line) = filter(isdigit, line) .|> (first, last) |> join |> n -> parse(Int, n)
 IOBuffer(calibration) |> eachline .|> cal_value |> sum
 ```
 
+The answer to the problem is 142. 
+
 ## Takeaways
 
 Try to describe the solution algorithm in a sentence. Don't focus on implementation just yet. Each verb in your description is a good candidate for a function. Each function can be thought as a sub-problem. 
 
-Smaller problem means less things to keep in your head at a time. A big code requires you to scroll through to find important things. Ideally, try keeping related code on one monitor screen[^2]. 
+Breaking down large problems into smaller, well-defined sub-problems not only makes  makes the code more manageable but also enhances readability and maintainability. Strive to solve these isolated problems as [pure functions](https://en.wikipedia.org/wiki/Pure_function). This kind of code organisation also works really well with [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) (TDD). 
+
+The smaller the problem the less code you need to write to solve it.  Long and complex code can be challenging to navigate and reason about. Try keeping related code on one monitor screen[^2] for better comprehension, easier debugging and more efficient development. 
 
 [^2]: Rotating the monitor helps.
 
-Breaking the problem into smaller sub-problem helps with work organisation. Small problems can be solved and solution code tested in isolation. Strive to solve these isolated problems as [pure functions](https://en.wikipedia.org/wiki/Pure_function). This kind of code organisation also works well with [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) (TDD). 
-
-Try to operate on the data as a whole and don't iterate over data with a for loop unless you have to. It is a short way to [off-by-one](https://en.wikipedia.org/wiki/Off-by-one_error) and out-of-bounds errors. You will also be tempted to change variables inside the for loop and to create loops inside loops. Good luck debugging that. 
+Avoid iterating over data with a for loop unless you really have to. It is a short way to [off-by-one](https://en.wikipedia.org/wiki/Off-by-one_error) and out-of-bounds errors. You will also be tempted to change variables inside the for loop and to create loops inside loops. Good luck debugging that. 
