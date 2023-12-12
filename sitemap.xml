@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sheep.observer/electronics.html</loc>
-    <lastmod>2023-07-02T10:00:10.063Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sheep.observer/index.html</loc>
-    <lastmod>2023-07-02T10:00:09.447Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sheep.observer/openstreetmap.html</loc>
-    <lastmod>2023-07-02T10:00:08.844Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html</loc>
-    <lastmod>2023-07-02T10:00:08.065Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sheep.observer/all.html</loc>
-    <lastmod>2023-07-02T10:00:08.500Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sheep.observer/electronics/LTSpice-color-theme/LTSpice-color-theme.html</loc>
-    <lastmod>2023-07-02T10:00:09.156Z</lastmod>
+    <lastmod>2023-12-12T23:41:08.794Z</lastmod>
   </url>
   <url>
     <loc>https://sheep.observer/programming.html</loc>
-    <lastmod>2023-07-02T10:00:09.733Z</lastmod>
+    <lastmod>2023-12-12T23:41:06.028Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sheep.observer/electronics/LTSpice-color-theme/LTSpice-color-theme.html</loc>
+    <lastmod>2023-12-12T23:41:05.348Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sheep.observer/all.html</loc>
+    <lastmod>2023-12-12T23:41:04.663Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html</loc>
+    <lastmod>2023-12-12T23:41:04.146Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sheep.observer/openstreetmap.html</loc>
+    <lastmod>2023-12-12T23:41:05.012Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sheep.observer/index.html</loc>
+    <lastmod>2023-12-12T23:41:05.658Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sheep.observer/programming/Julia-piping/piping.html</loc>
+    <lastmod>2023-12-12T23:41:08.455Z</lastmod>
   </url>
 </urlset>

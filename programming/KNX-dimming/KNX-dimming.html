@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Szymon Bęczkowski">
+<meta name="dcterms.date" content="2023-07-14">
+
+<title>Sheep observer - Shared mutable state in KNX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Merriweather" type="text/css">
+<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Raleway" type="text/css">
+
+
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Sheep observer</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../programming.html" rel="" target=""><i class="bi bi-terminal" role="img">
+</i> 
+ <span class="menu-text">programming</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../electronics.html" rel="" target=""><i class="bi bi-lightning" role="img">
+</i> 
+ <span class="menu-text">electronics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../openstreetmap.html" rel="" target=""><i class="bi bi-map" role="img">
+</i> 
+ <span class="menu-text">openstreetmap</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../all.xml" rel="" target=""><i class="bi bi-rss" role="img">
+</i> 
+ <span class="menu-text"></span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools">
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Shared mutable state in KNX</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">KNX</div>
+    <div class="quarto-category">home automation</div>
+    <div class="quarto-category">state</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Szymon Bęczkowski </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 14, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+
+<p>In the old ages if you wanted to dim your room lights you bought a dimmer that physically replaced your light switch. Now you had a knob which controlled your lights. Simple.</p>
+<p>Then came the era of IoT where all your lamps were connected to WiFi and you’d send them commands over the cloud. It had the benefit that you did not have to change your electrical installation. No screwdriver needed. You only had to change the lightbulb. Now you and your house mates had command over the light level via the app on their phone. You could control your home light when on vacations. Fun.</p>
+<p>Then the company that made your fancy lightbulb went out of business and the app suddenly stopped working and you were left with an expensive lightbulb. That is why I am going with a twenty-year-old standard for my home automation.</p>
+<p>This is a story on why dimming a lightbulb is one of the trickier acts in programming.</p>
+<section id="a-stateful-system" class="level2">
+<h2 data-anchor-id="a-stateful-system">A stateful system</h2>
+<p>A stateful system is a system that internally rememebers its preceding interactions.</p>
+</section>
+<section id="setup" class="level2">
+<h2 data-anchor-id="setup">Setup</h2>
+<p>MDT AKD-0424R2.02 LED dimmer Jung DS 4092 TS rotary sensor</p>
+<p>Normal operation (knob + pushbutton)</p>
+<section id="extended-inputs" class="level3">
+<h3 data-anchor-id="extended-inputs">Extended inputs</h3>
+<p>Normal operation of extended inputs</p>
+</section>
+</section>
+<section id="problem" class="level2">
+<h2 data-anchor-id="problem">Problem</h2>
+<p>No feedback from LED dimmer to sensor Brighter/darker state does not reflect LED brightness, just alternats between the two.</p>
+</section>
+<section id="solution" class="level2">
+<h2 data-anchor-id="solution">Solution</h2>
+<p>Fake a dimming command so that the extended input updates its internal state</p>
+</section>
+<section id="solution-implementation-in-gira-x1" class="level2">
+<h2 data-anchor-id="solution-implementation-in-gira-x1">Solution implementation in Gira X1</h2>
+<p>[input: dimming feedback] → [comparator: in=0] → [send-by-change] → [value generator: −1] → [delay 2s (dimming lasts 2s)] → [output: dimming command]</p>
+<p>Parallel chain for in=100 and send +1.</p>
+<section id="problem-with-this-solution" class="level3">
+<h3 data-anchor-id="problem-with-this-solution">Problem with this solution</h3>
+<p>If state changes again during the 2s delay then the solution may fail.</p>
+<p>We are replacing one state problem with another state problem. Hopefully less annoying and less frequent error.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+</div> <!-- /content -->
+
+
+
+</body></html>
