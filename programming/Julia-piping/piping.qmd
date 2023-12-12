@@ -3,15 +3,13 @@ title: Piping
 lang: en
 author: "Szymon Bęczkowski"
 date: "2023-12-11"
-categories: [Julia,functional programming]
-description: "Piping is cool, m'kay?"
+categories: [Julia, functional programming, Advent of Code]
+description: "A short introduction to functional programming in Julia."
 jupyter: julia-1.9
 reference-location: margin
 ---
 
-How to structure code. Data flow. Transformations. 
-
-[Advent of code](https://adventofcode.com) is a quaint site that posts one programming problem a day just before Christmas. Just so we can flex our programming muscle. More importanetly, so we can eavsdrop on other people's code. 
+[Advent of code](https://adventofcode.com) is a quaint site that posts one programming problem a day just before Christmas. Just so we can flex our programming muscle. More importanetly, so we can eavsdrop on other people's code. Looking at some of the solutions motivated me to write this tutorial. A lot of people start learning programming with C++ or MATLAB. This inevitably leads to a very verbose and error-prone code. I'd like to show how here how modern programming practices and a good language can help making the solution elegant and maintainable. 
 
 ## The problem
 
@@ -149,7 +147,7 @@ y_clipped = map(clip, y) # ← map does the heavy lifting here
 
 using Plots
 plot(x, y, label="sin(x)", xticks=(-π:π:π,["-π","0","π"]))
-plot!(x, y_clipped, label="clip(sin(x))")
+plot!(x, y_clipped, label="clipped sin(x)")
 ```
 
 ## Let the data flow
