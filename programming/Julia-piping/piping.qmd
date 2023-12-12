@@ -6,6 +6,7 @@ date: "2023-12-11"
 categories: [Julia,functional programming]
 description: "Piping is cool, m'kay?"
 jupyter: julia-1.9
+reference-location: margin
 ---
 
 How to structure code. Data flow. Transformations. 
@@ -316,14 +317,18 @@ IOBuffer(calibration) |> eachline .|> cal_value |> sum
 
 ## Takeaways
 
-### Look for patterns in the problem
 
-Someone has done the boilerplate code for you
-Map filter reduce
 
 ### Break the problem into smaller problems
 
-Smaller problem = less things to keep in your head at a time
-TDD
-Parallel work
-Modularity
+Smaller problem means less things to keep in your head at a time. A big code requires you to scroll through to find important things. Ideally, try keeping related code on one monitor screen[^1]. 
+
+[^1]: Rotating the monitor helps.
+
+Breaking the problem into smaller sub-problem helps with work organisation. Small problems can be solved and solution code tested in isolation. Strive to solve these isolated problems as [pure functions](https://en.wikipedia.org/wiki/Pure_function). This kind of code organisation also works well with [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development) (TDD). 
+
+### Look for patterns in the problem
+
+
+Someone has done the boilerplate code for you
+Map filter reduce
