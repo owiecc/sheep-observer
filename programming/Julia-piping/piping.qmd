@@ -45,7 +45,7 @@ Now that we understand how to split the `calibration` string into individual lin
 
 ## The actual problem
 
-Looking within individual line, our problem can now be states as: given a string, extract first and last digit; join the two digits to form a two-digit number. 
+Looking within individual line, our problem can now be states as follows: given a string, extract first and last digits, and then join the two digits to form a two-digit number. 
 
 Let's take one of the lines above and use it as a test case. 
 
@@ -54,7 +54,7 @@ Let's take one of the lines above and use it as a test case.
 cal_line = "a1b2c3d4e5f"
 ```
 
-First a solution that is quite typical for students after their first MATLAB course. 
+Here's a solution that is quite typical for students after completing their first MATLAB course:
 
 ```{julia}
 number = ""
@@ -83,15 +83,15 @@ end
 parse(Int, number)
 ```
 
-It works but is also suuuuper long. If you use e.g. VSCode, some of the code will be underlined with a squigly line. It is Julia's linter telling us that:
+It works but is also suuuuper long. If you are using an editor, like VSCode, you might notice some code underlined with a squiggly line. This is Julia's linter telling us that:
 
 > Indexing with indices obtained from `length`, `size` etc is discouraged. Use `eachindex` or `axes` instead.
 
-A linter is a tool that continously checks your code for possible errors and [anti-patterns](https://en.wikipedia.org/wiki/Anti-pattern). In this case it is pointing out that `for i in 1:length(cal_line)` is not cool. Let's try to include the proposed fix. 
+A linter is a tool that continously checks your code for possible errors and [anti-patterns](https://en.wikipedia.org/wiki/Anti-pattern). In this case, it points out that `for i in 1:length(cal_line)` is not cool. Let's implement the proposed fix. 
 
-Instead of creating a vector of indexes `1:length(cal_line)` we can just ask for it: `eachindex(cal_line)` and for the second case: `Iterators.reverse(eachindex(cal_line))`. This is advisable because arrays in Julia can have arbitrary indexes. Forget about the war between [0-based](https://en.wikipedia.org/wiki/Zero-based_numbering) and 1-based indexing in programming. Embrace [Star Wars movies order indexing](https://github.com/giordano/StarWarsArrays.jl). 
+Rather than creating a vector of indexes `1:length(cal_line)`, we can directly obtain using `eachindex(cal_line)` for the first case and `Iterators.reverse(eachindex(cal_line))` for the second case. This approach is advisable because arrays in Julia can have arbitrary indexes. Forget about the war between [0-based](https://en.wikipedia.org/wiki/Zero-based_numbering) and 1-based indexing styles. Embrace [Star Wars movies order indexing](https://github.com/giordano/StarWarsArrays.jl). 
 
-Notice that we did not use the `i` variable for anything other than indexing an element of the input string. We should take advante of the fact that we can just iterate over anything that is iterable. Any `String` or `Array` or similar data structure is. If a data structure can be described similar to: _a string is a collection of characters_ or _an array is a collection of numbers_ then it most likely is iterable. 
+Notice that we did not use the `i` variable for anything other than indexing an element of the input string. We should take advantage of the fact that we can just iterate over anything that is iterable. Any `String` or `Array` or similar data structure is. If a data structure can be described similarly to: _a string is a collection of characters_ or _an array is a collection of numbers_ then it most likely is iterable. 
 
 ```{julia}
 number = ""
@@ -118,19 +118,19 @@ end
 parse(Int, number)
 ```
 
-The code is now a bit prettier but it still looks repetitive and quite verbose. The first loop looks for the first numeric character; the second loop looks for the last numeric character. Conceptually they do almost the same job. They iterate over a collection of characters until they find a digit. 
+The code is now a bit prettier but it still appears repetitive and somewhat verbose. The first loop seeks the first numeric character, while the second loop seeks the last numeric character. In essence, they perform nearly identical tasks. They iterate over a collection of characters until they encounter a digit. 
 
-What if we first remove all the letters (non-digits) from the string? Then our search for digits will be much simpler. So how do we go from `"a1b2c3d4e5f"` to `"12345"`? 
+What if we first remove all the letters (non-digits) from the string? Then our search for digits will be much simpler. So, how do we go from `"a1b2c3d4e5f"` to `"12345"`? 
 
 ## Interlude II: map filter reduce
 
-The three functions: `map`, `filter` and `reduce` are the [workhorse](https://en.wikipedia.org/wiki/Functional_programming#Imperative_vs._functional_programming) of [functional programming](https://en.wikipedia.org/wiki/Functional_programming). 
+The three functions–`map`, `filter` and `reduce`–are the [workhorses](https://en.wikipedia.org/wiki/Functional_programming#Imperative_vs._functional_programming) of [functional programming](https://en.wikipedia.org/wiki/Functional_programming). 
 
 - `map` applies a function element-wise to a collection
-- `filter` yields a sub-collection based on some element criteria
+- `filter` yields a sub-collection based on specified criteria
 - `reduce` accumulates an output based on subsequent elements
 
-These three function can do a lot. 
+These three functions are powerful tools in functional programming paradigm and can be employed for a wide range of tasks.
 
 ```{julia}
 function clip(x, x_min=-0.5, x_max=0.5)
@@ -154,15 +154,15 @@ plot!(x, y_clipped, label="clipped sin(x)")
 
 ## Let the data flow
 
-First lets use the newly acquired power to get rid of the letters in our line. Any function that returns a `Boolean` can be used inside a `filter`. 
+First lets use the newly acquired powers to get rid of the letters in our line. Any function, that returns a `Boolean`, can be used inside a `filter`. 
 
 ```{julia}
 cal_digits = filter(isdigit, cal_line)
 ```
 
-Notice we do not give any input to the `isdigit` function. `filter` does that for us. It applies this function to every element of the collection and if the Answer is `True` the corresponding element gets to live a bit longer in the new, filtered collection. 
+Notice we do don't explicitly provide any input to the `isdigit` function, instead `filter` does it for us. It applies the `isdigit` function to every element of the collection, and if the result is `True`, the corresponding element gets to live a bit longer in the new, filtered collection. 
 
-We can now extract the first and last numbers from this new string. 
+Now, we can proceed to extract the first and last digits from the refined string.
 
 ```{julia}
 first_cal_digit = first(cal_digits)
