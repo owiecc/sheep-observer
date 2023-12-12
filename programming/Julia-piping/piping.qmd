@@ -4,6 +4,7 @@ lang: en
 author: "Szymon Bęczkowski"
 date: "2023-12-12"
 categories: [Julia, functional programming, Advent of Code]
+image: "pipe.svg"
 description: "How to structure the code using nothing but circles and pipes."
 jupyter: julia-1.9
 reference-location: margin
