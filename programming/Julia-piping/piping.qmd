@@ -145,7 +145,7 @@ end
 
 x = -π:0.01:π
 y = sin.(x)
-y_clipped = map(clip, y) # ← map does the heavy lifting here
+y_clipped = map(clip, y) # map does the heavy lifting here
 
 using Plots
 plot(x, y, label="sin(x)", xticks=(-π:π:π,["-π","0","π"]))
@@ -270,10 +270,10 @@ Now we do have our first and last digits captured, but they still are in a chara
 filter(isdigit, cal_line) .|> (first, last) |> join
 ```
 
-This string should be interpreted as a Int number. `parse` function can do that for us but it needs two inputs: _what_ to parse and _how_ to parse it. If we want to use it in our nice flow code we need to bake in one of the inputs.
+The resulting string should be reinterpreted as a number. The `parse` function can do that for us but it requires two inputs: _what_ to parse and _how_ to parse it. To incorporate it into our streamlined code flow, we must embed one of the inputs.
 
 ```{julia}
-parseint(number) = parse(Int, number) # ← parseint() function has one input and one output
+parseint(number) = parse(Int, number) # parseint() function has one input and one output
 filter(isdigit, cal_line) .|> (first, last) |> join |> parseint
 ```
 
@@ -305,7 +305,7 @@ twofold(5)
 Most common use of these anonymous functions is existence in a chain of functions or being passed to another function. 
 
 ```{julia}
-map(x->2x, [1,2,3]) # ← x->2x is an anonymous function that is passed to a map function
+map(x->2x, [1,2,3]) # x->2x is an anonymous function that is passed to a map function
 ```
 
 We will use this technique to parse a string to an integer. Now, the line parsing is complete. 
