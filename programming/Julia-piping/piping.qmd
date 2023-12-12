@@ -266,11 +266,40 @@ filter(isdigit, cal_line) .|> (first, last) |> join
 This string should be interpreted as a Int number. `parse` function can do that for us but it needs two inputs: _what_ to parse and _how_ to parse it. If we want to use it in our nice flow code we need to bake in one of the inputs.
 
 ```{julia}
-parseint(number) = parse(Int, number)
+parseint(number) = parse(Int, number) # ← parseint() function has one input and one output
 filter(isdigit, cal_line) .|> (first, last) |> join |> parseint
 ```
 
-As with variables we can get rid of naming this temporary function by using an anonymous function. 
+## Interlude III: Function-That-Must-Not-Be-Named
+
+As with variables, we can get rid of naming this short lived function by using an anonymous function. An anonymous function is a function without a name. Consider this function:
+
+```{julia}
+double(x) = 2x
+```
+
+It doubles whatever we feed to it. Now, let's create an anonymous version of this function:
+
+```{julia}
+x -> 2x
+```
+
+Julia made it for us. It is function `#13`. Where is it then? How do we call it? 
+
+Function `#13` is indeed quite unlucky. We did not catch it in time and it went to the void. [A Pokémon function?]{.aside} Confusingly, we can name an anonymous function. 
+
+```{julia}
+twofold = x -> 2x
+twofold(5)
+```
+
+Most common use of these anonymous functions is existence in a chain of functions or being passed to another function. 
+
+```{julia}
+map(x->2x, [1,2,3]) # ← x->2x is our anonymous function 
+```
+
+We will use it to parse a string to an integer. 
 
 ```{julia}
 filter(isdigit, cal_line) .|> (first, last) |> join |> n -> parse(Int, n)
