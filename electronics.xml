@@ -14,7 +14,7 @@
 <item>
   <title>Making LTSpice pretty</title>
   <dc:creator>Szymon Bęczkowski</dc:creator>
-  <link>https://sheep.observer/electronics/LTSpice-color-theme/LTSpice-color-theme.html</link>
+  <link>https://sheep.observer/electronics/LTSpice-color-theme.html</link>
   <description><![CDATA[ 
 
 
@@ -105,7 +105,7 @@
  ]]></description>
   <category>SPICE</category>
   <category>LTspice</category>
-  <guid>https://sheep.observer/electronics/LTSpice-color-theme/LTSpice-color-theme.html</guid>
+  <guid>https://sheep.observer/electronics/LTSpice-color-theme.html</guid>
   <pubDate>Fri, 23 Jun 2023 22:00:00 GMT</pubDate>
   <media:content url="https://sheep.observer/electronics/LTSpice-color-theme/schematic.png" medium="image" type="image/png" height="102" width="144"/>
 </item>

@@ -14,7 +14,7 @@
 <item>
   <title>Mapping with LIDAR data</title>
   <dc:creator>Szymon Bęczkowski</dc:creator>
-  <link>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html</link>
+  <link>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data.html</link>
   <description><![CDATA[ 
 
 
@@ -78,7 +78,7 @@
  ]]></description>
   <category>imagery</category>
   <category>LIDAR</category>
-  <guid>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html</guid>
+  <guid>https://sheep.observer/openstreetmap/mapping-with-LIDAR-data.html</guid>
   <pubDate>Thu, 29 Jun 2023 22:00:00 GMT</pubDate>
   <media:content url="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg" medium="image" type="image/jpeg"/>
 </item>

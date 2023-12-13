@@ -2,27 +2,27 @@
   {
     "listing": "/electronics.html",
     "items": [
-      "/electronics/LTSpice-color-theme/LTSpice-color-theme.html"
+      "/electronics/LTSpice-color-theme.html"
     ]
   },
   {
     "listing": "/programming.html",
     "items": [
-      "/programming/Julia-piping/piping.html"
+      "/programming/intro-to-functional-programming-in-Julia.html"
     ]
   },
   {
     "listing": "/all.html",
     "items": [
-      "/programming/Julia-piping/piping.html",
-      "/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html",
-      "/electronics/LTSpice-color-theme/LTSpice-color-theme.html"
+      "/programming/intro-to-functional-programming-in-Julia.html",
+      "/openstreetmap/mapping-with-LIDAR-data.html",
+      "/electronics/LTSpice-color-theme.html"
     ]
   },
   {
     "listing": "/openstreetmap.html",
     "items": [
-      "/openstreetmap/mapping-with-LIDAR-data/mapping-with-LIDAR-data.html"
+      "/openstreetmap/mapping-with-LIDAR-data.html"
     ]
   }
 ]
