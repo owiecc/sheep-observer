@@ -9,8 +9,3 @@ listing:
   feed: true
 page-layout: full
 ---
-I am not a programmer. I dabble in programming. 
-
-Started with [Pascal](https://en.wikipedia.org/wiki/Pascal_(programming_language)) and [BASIC](https://en.wikipedia.org/wiki/BASIC) in the previous century. Learned basics of [C](https://en.wikipedia.org/wiki/C_(programming_language)) at the universtity. Had a short affair with [Ruby](https://en.wikipedia.org/wiki/Ruby_(programming_language)) when [Rails](https://en.wikipedia.org/wiki/Ruby_on_Rails) was popular. Chunky bacon. Tried [Objective-C](https://en.wikipedia.org/wiki/Objective-C) but gave up easily. Drew [LabView](https://en.wikipedia.org/wiki/LabVIEW) because it connected to all the measurement gear around. Wrote some [C++](https://en.wikipedia.org/wiki/C%2B%2B) for my beloved DSP processor. Did [MATLAB](https://en.wikipedia.org/wiki/MATLAB) for many years because of academic pressure, got good at it, dropped it for [Julia](https://julialang.org). Licked some [LISP](https://en.wikipedia.org/wiki/Lisp_(programming_language)) but it tased of [unclosed parentheses](https://xkcd.com/297/). Got my head blown by [Haskell](https://en.wikipedia.org/wiki/Haskell). Currently [APL](https://en.wikipedia.org/wiki/APL_(programming_language)) curious because it looks beautiful but not curious enough to actually do anything about it. 
-
-I treat programming languages like bicycles. You can never have too many. 
