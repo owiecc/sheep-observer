@@ -3,7 +3,7 @@ title: "Making LTSpice pretty"
 author: "Szymon Bęczkowski"
 date: "2023-06-24"
 categories: [SPICE, LTspice]
-image: "schematic.png"
+image: "LTSpice-color-theme/schematic.png"
 ---
 
 ## Color theme
@@ -11,9 +11,9 @@ image: "schematic.png"
 You can change the default color palette of LTSpice. The default one is very depressing. I use a black and white theme with waveforms color scheme from MATLAB. 
 
 ::: {layout-ncol=2}
-![](schematic.png)
+![](LTSpice-color-theme/schematic.png)
 
-![](waveform.png)
+![](LTSpice-color-theme/waveform.png)
 :::
 
 Colors can be changed using GUI or by modifying the values in the [config file](https://www.eevblog.com/forum/eda/where-does-ltspice-keep-its-settings/). 

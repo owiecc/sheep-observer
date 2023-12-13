@@ -4,7 +4,7 @@ lang: en
 author: "Szymon Bęczkowski"
 date: "2023-06-30"
 categories: [imagery,LIDAR]
-image: "bunker-LIDAR-surface.jpg"
+image: "mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg"
 description: "LIDAR data can reveal features hidden under forest canopy. It is especially useful for discovering trails and other man-made structures not visible on standard imagery."
 ---
 
@@ -12,7 +12,7 @@ description: "LIDAR data can reveal features hidden under forest canopy. It is e
 
 Urban trees, especially big dense ones, are becoming a rare sight in our environment. They provide habitat for many species, offer shade in the summer, combat the heat island effect, reduce stormwater pollution, filter air, absorb noise and are beneficial for our mental health. Despite all these superb benefits I have one bone to pick with them—they block my view from above. 
 
-![](bunker-aerial.jpg){fig-alt="Aerial view of forrest." fig-align="center" width=80%}
+![](mapping-with-LIDAR-data/bunker-aerial.jpg){fig-alt="Aerial view of forrest." fig-align="center" width=80%}
 
 The area you see above is a `natural=wood` for OSM mapper. There are some quirks on how you map an area like this. OSM wiki mentions [six different approaches](https://wiki.openstreetmap.org/wiki/Forest#Which_tag_should_be_used?). Irrespective of the approach taken, one question remains: what is under the trees? 
 
@@ -27,9 +27,9 @@ LIDAR became more widely known by the general public when it was used to [discov
 :::{.column-page}
 
 ::: {layout-ncol=2}
-![](bunker-LIDAR-surface.jpg){fig-alt="LIDAR view of forrest with visible foliage."}
+![](mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg){fig-alt="LIDAR view of forrest with visible foliage."}
 
-![](bunker-LIDAR-terrain.jpg){fig-alt="LIDAR view of terrain under forest. Foliage not visible."}
+![](mapping-with-LIDAR-data/bunker-LIDAR-terrain.jpg){fig-alt="LIDAR view of terrain under forest. Foliage not visible."}
 :::
 
 :::
@@ -48,12 +48,12 @@ Sometimes, the laser pulse will hit a leaf. Other times, it will accidentally f
 
 For OSM mappers, LIDAR is especially useful for discovering and aligning paths in woody areas. The image below looks like a well-mapped nature area with many criss-crossing paths. 
 
-![](paths-aerial.jpg){fig-alt="Aerial view of forrest." fig-align="center" width=80%}
+![](mapping-with-LIDAR-data/paths-aerial.jpg){fig-alt="Aerial view of forrest." fig-align="center" width=80%}
 
 Footpaths and bike tracks form long troughs on forest beds and are clearly visible on LIDAR imagery. Notice below how many paths are misaligned or just missing. 
 
 :::{.column-body-outset}
-![](paths-LIDAR-terrain.jpg){fig-alt="Aerial view of forrest." fig-align="center" width=100%}
+![](mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg){fig-alt="Aerial view of forrest." fig-align="center" width=100%}
 :::
 
 Other geo features that are clearly visible on LIDAR images are water bodies, streams, embankments and ditches. 
