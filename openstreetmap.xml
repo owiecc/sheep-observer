@@ -9,7 +9,7 @@
 <link>https://sheep.observer/openstreetmap.html</link>
 <atom:link href="https://sheep.observer/openstreetmap.xml" rel="self" type="application/rss+xml"/>
 <description>Szymon Bęczkowski&#39;s blog</description>
-<generator>quarto-1.3.450</generator>
+<generator>quarto-1.6.40</generator>
 <lastBuildDate>Thu, 29 Jun 2023 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Mapping with LIDAR data</title>
@@ -19,12 +19,13 @@
 
 
 
+
 <section id="foliage-sucks" class="level2 page-columns page-full">
 <h2 data-anchor-id="foliage-sucks">Foliage sucks</h2>
 <p>Urban trees, especially big dense ones, are becoming a rare sight in our environment. They provide habitat for many species, offer shade in the summer, combat the heat island effect, reduce stormwater pollution, filter air, absorb noise and are beneficial for our mental health. Despite all these superb benefits I have one bone to pick with them—they block my view from above.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-aerial.jpg" class="quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 <p>The area you see above is a <code>natural=wood</code> for OSM mapper. There are some quirks on how you map an area like this. OSM wiki mentions <a href="https://wiki.openstreetmap.org/wiki/Forest#Which_tag_should_be_used?">six different approaches</a>. Irrespective of the approach taken, one question remains: what is under the trees?</p>
@@ -33,8 +34,11 @@
 <p>It is now used, for example, to archive heritage sites so that they can be viewed by the future generations. They&nbsp;are also used in agriculture for crop monitoring.</p>
 <p>LIDAR became more widely known by the general public when it was used to <a href="https://www.smithsonianmag.com/science-nature/lost-cities-of-the-amazon-discovered-from-the-air-180980142/">discover artifacts</a> of <a href="https://www.youtube.com/watch?v=dphq5X-rMew">ancient civilisations</a>. These artifacts were, until now, hidden under the canopy of the rainforest. LIDAR scanning revealed a network of settlements within the Amazon forest. Similar to Amazon surveyors, we can now use LIDAR data to reveal hidden objects under the canopy.</p>
 <div class="column-page">
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg" alt="LIDAR view of forrest with visible foliage."></p>
 </div>
@@ -57,14 +61,14 @@
 <p>For OSM mappers, LIDAR is especially useful for discovering and aligning paths in woody areas. The&nbsp;image below looks like a well-mapped nature area with many criss-crossing paths.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-aerial.jpg" class="quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 <p>Footpaths and bike tracks form long troughs on forest beds and are clearly visible on LIDAR imagery. Notice below how many paths are misaligned or just missing.</p>
-<div class="column-body-outset">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg" style="width:100.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg" class="quarto-figure quarto-figure-center figure-img column-body-outset" style="width:100.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 </div>

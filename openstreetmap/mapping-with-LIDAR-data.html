@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.6.40">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,7 +10,7 @@
 <meta name="dcterms.date" content="2023-06-30">
 <meta name="description" content="LIDAR data can reveal features hidden under forest canopy. It is especially useful for discovering trails and other man-made structures not visible on standard imagery.">
 
-<title>Sheep observer - Mapping with LIDAR data</title>
+<title>Mapping with LIDAR data – Sheep observer</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -35,17 +35,22 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f97b1f7fd39422d69808a223bdb87b72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -69,45 +75,45 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Sheep observer</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../programming.html" rel="" target=""><i class="bi bi-terminal" role="img">
+    <a class="nav-link" href="../programming.html"> <i class="bi bi-terminal" role="img">
 </i> 
- <span class="menu-text">programming</span></a>
+<span class="menu-text">programming</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../electronics.html" rel="" target=""><i class="bi bi-lightning" role="img">
+    <a class="nav-link" href="../electronics.html"> <i class="bi bi-lightning" role="img">
 </i> 
- <span class="menu-text">electronics</span></a>
+<span class="menu-text">electronics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../openstreetmap.html" rel="" target=""><i class="bi bi-map" role="img">
+    <a class="nav-link" href="../openstreetmap.html"> <i class="bi bi-map" role="img">
 </i> 
- <span class="menu-text">openstreetmap</span></a>
+<span class="menu-text">openstreetmap</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="../all.xml" rel="" target=""><i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../all.xml"> <i class="bi bi-rss" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -155,14 +161,16 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="foliage-sucks" class="level2 page-columns page-full">
 <h2 data-anchor-id="foliage-sucks">Foliage sucks</h2>
 <p>Urban trees, especially big dense ones, are becoming a rare sight in our environment. They provide habitat for many species, offer shade in the summer, combat the heat island effect, reduce stormwater pollution, filter air, absorb noise and are beneficial for our mental health. Despite all these superb benefits I have one bone to pick with them—they block my view from above.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mapping-with-LIDAR-data/bunker-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<p><img src="mapping-with-LIDAR-data/bunker-aerial.jpg" class="quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 <p>The area you see above is a <code>natural=wood</code> for OSM mapper. There are some quirks on how you map an area like this. OSM wiki mentions <a href="https://wiki.openstreetmap.org/wiki/Forest#Which_tag_should_be_used?">six different approaches</a>. Irrespective of the approach taken, one question remains: what is under the trees?</p>
@@ -171,8 +179,11 @@ ul.task-list li input[type="checkbox"] {
 <p>It is now used, for example, to archive heritage sites so that they can be viewed by the future generations. They&nbsp;are also used in agriculture for crop monitoring.</p>
 <p>LIDAR became more widely known by the general public when it was used to <a href="https://www.smithsonianmag.com/science-nature/lost-cities-of-the-amazon-discovered-from-the-air-180980142/">discover artifacts</a> of <a href="https://www.youtube.com/watch?v=dphq5X-rMew">ancient civilisations</a>. These artifacts were, until now, hidden under the canopy of the rainforest. LIDAR scanning revealed a network of settlements within the Amazon forest. Similar to Amazon surveyors, we can now use LIDAR data to reveal hidden objects under the canopy.</p>
 <div class="column-page">
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg" alt="LIDAR view of forrest with visible foliage."></p>
 </div>
@@ -195,14 +206,14 @@ ul.task-list li input[type="checkbox"] {
 <p>For OSM mappers, LIDAR is especially useful for discovering and aligning paths in woody areas. The&nbsp;image below looks like a well-mapped nature area with many criss-crossing paths.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="mapping-with-LIDAR-data/paths-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<p><img src="mapping-with-LIDAR-data/paths-aerial.jpg" class="quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 <p>Footpaths and bike tracks form long troughs on forest beds and are clearly visible on LIDAR imagery. Notice below how many paths are misaligned or just missing.</p>
-<div class="column-body-outset">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg" style="width:100.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg" class="quarto-figure quarto-figure-center figure-img column-body-outset" style="width:100.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 </div>
@@ -215,6 +226,7 @@ ul.task-list li input[type="checkbox"] {
 
 </main> <!-- /main -->
 </div> <!-- /content -->
+
 
 
 

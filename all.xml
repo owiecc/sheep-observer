@@ -9,13 +9,14 @@
 <link>https://sheep.observer/all.html</link>
 <atom:link href="https://sheep.observer/all.xml" rel="self" type="application/rss+xml"/>
 <description>Szymon Bęczkowski&#39;s blog</description>
-<generator>quarto-1.3.450</generator>
+<generator>quarto-1.6.40</generator>
 <lastBuildDate>Mon, 11 Dec 2023 23:00:00 GMT</lastBuildDate>
 <item>
   <title>A short introduction to functional programming in Julia</title>
   <dc:creator>Szymon Bęczkowski</dc:creator>
   <link>https://sheep.observer/programming/intro-to-functional-programming-in-Julia.html</link>
   <description><![CDATA[ 
+
 
 
 
@@ -57,8 +58,10 @@ font-style: inherit;">"""</span></span></code></pre></div>
 <div class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb2-1"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> cal_line <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">eachline</span>(<span class="fu" style="color: #4758AB;
@@ -69,6 +72,7 @@ background-color: null;
 font-style: inherit;">@show</span> cal_line</span>
 <span id="cb2-3"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span></code></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>cal_line = "1abc2"
@@ -103,8 +107,10 @@ font-style: inherit;">@show</span> number</span>
 <span id="cb5-3"></span>
 <span id="cb5-4"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="fl" style="color: #AD0000;
 background-color: null;
 font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
@@ -117,6 +123,7 @@ background-color: null;
 font-style: inherit;">=</span> cal_line[i]</span>
 <span id="cb5-6">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">isdigit</span>(s)</span>
@@ -127,12 +134,15 @@ background-color: null;
 font-style: inherit;">*</span> s</span>
 <span id="cb5-8">        <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">break</span></span>
 <span id="cb5-9">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb5-10"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb5-11"></span>
 <span id="cb5-12"><span class="pp" style="color: #AD0000;
@@ -141,8 +151,10 @@ font-style: inherit;">@show</span> number</span>
 <span id="cb5-13"></span>
 <span id="cb5-14"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> i <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">length</span>(cal_line)<span class="op" style="color: #5E5E5E;
@@ -159,6 +171,7 @@ background-color: null;
 font-style: inherit;">=</span> cal_line[i]</span>
 <span id="cb5-16">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">isdigit</span>(s)</span>
@@ -169,12 +182,15 @@ background-color: null;
 font-style: inherit;">*</span> s</span>
 <span id="cb5-18">        <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">break</span></span>
 <span id="cb5-19">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb5-20"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb5-21"></span>
 <span id="cb5-22"><span class="pp" style="color: #AD0000;
@@ -214,11 +230,14 @@ font-style: inherit;">@show</span> number</span>
 <span id="cb8-3"></span>
 <span id="cb8-4"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> s <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> cal_line</span>
 <span id="cb8-5">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">isdigit</span>(s)</span>
@@ -229,12 +248,15 @@ background-color: null;
 font-style: inherit;">*</span> s</span>
 <span id="cb8-7">        <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">break</span></span>
 <span id="cb8-8">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb8-9"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb8-10"></span>
 <span id="cb8-11"><span class="pp" style="color: #AD0000;
@@ -243,13 +265,16 @@ font-style: inherit;">@show</span> number</span>
 <span id="cb8-12"></span>
 <span id="cb8-13"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">for</span> s <span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">in</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">reverse</span>(cal_line)</span>
 <span id="cb8-14">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">isdigit</span>(s)</span>
@@ -260,12 +285,15 @@ background-color: null;
 font-style: inherit;">*</span> s</span>
 <span id="cb8-16">        <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">break</span></span>
 <span id="cb8-17">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb8-18"><span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb8-19"></span>
 <span id="cb8-20"><span class="pp" style="color: #AD0000;
@@ -301,6 +329,7 @@ number = "15"</code></pre>
 <div class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb11-1"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">function</span> <span class="fu" style="color: #4758AB;
 background-color: null;
 font-style: inherit;">clip</span>(x, x_min<span class="op" style="color: #5E5E5E;
@@ -314,27 +343,35 @@ background-color: null;
 font-style: inherit;">0.5</span>)</span>
 <span id="cb11-2">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&gt;</span> x_max <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">return</span> x_max <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb11-3">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">if</span> x <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">&lt;</span> x_min <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">return</span> x_min <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb11-4">    <span class="cf" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">return</span> x</span>
 <span id="cb11-5"><span class="kw" style="color: #003B4F;
 background-color: null;
+font-weight: bold;
 font-style: inherit;">end</span></span>
 <span id="cb11-6"></span>
 <span id="cb11-7"><span class="pp" style="color: #AD0000;
@@ -621,22 +658,25 @@ font-style: inherit;">|&gt;</span> something <span class="op" style="color: #5E5
 background-color: null;
 font-style: inherit;">|&gt;</span> different</span></code></pre></div>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   Input(data):::data --&gt; A[massage] --&gt; B[this] --&gt; C[into] --&gt; D[something] --&gt; E[different] --&gt; Result(output):::data
   classDef data fill:#C5F4E0
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
 <p>There is, however, a small problem. These functions take one input and return one output. Yet, our task involves extracting two things: the first and last digits. Subsequently, we need to sum these two numbers.</p>
-<div class="cell">
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   Input(cal_line):::data --&gt; Filter[filter numbers]
@@ -644,13 +684,15 @@ font-style: inherit;">|&gt;</span> different</span></code></pre></div>
   classDef data fill:#C5F4E0
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
 <p>We can massage our flow diagram, using Julia’s <a href="https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting">broadcasting</a> mechanism, until we get a nice straight diagram:</p>
-<div class="cell">
+<div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   Input(cal_line):::data --&gt; Filter[filter numbers]
@@ -658,6 +700,7 @@ font-style: inherit;">|&gt;</span> different</span></code></pre></div>
   classDef data fill:#C5F4E0
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -745,8 +788,8 @@ font-style: inherit;">2</span>x</span></code></pre></div>
 </div>
 </div>
 <p>Julia made it for us. It is function <code>#13</code>. Where is it then? How do we call it?</p>
-<div class="page-columns page-full"><p>Function <code>#13</code> is indeed quite unlucky. We did not catch it in time<sup>1</sup> and it went to the void. Confusingly, we can name an anonymous function.</p><div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup>&nbsp;A Pokémon function?</p></li></div></div>
-<div class="cell" data-execution_count="21">
+<p>Function <code>#13</code> is indeed quite unlucky. We did not catch it in time<sup>1</sup> and it went to the void. Confusingly, we can name an anonymous function.</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;A Pokémon function?</p></div></div><div class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb37" style="background: #f1f3f5;"><pre class="sourceCode julia"><code class="sourceCode julia"><span id="cb37-1">twofold <span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">=</span> x <span class="op" style="color: #5E5E5E;
@@ -851,8 +894,8 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 <h2 data-anchor-id="takeaways">Takeaways</h2>
 <p>Try to describe the solution algorithm in a sentence. Don’t focus on implementation just yet. Each verb in your description is a good candidate for a function. Each function can be thought as a sub-problem.</p>
 <p>Breaking down large problems into smaller, well-defined sub-problems not only makes makes the code more manageable but also enhances readability and maintainability. Strive to solve these isolated problems as <a href="https://en.wikipedia.org/wiki/Pure_function">pure functions</a>. This kind of code organisation also works really well with <a href="https://en.wikipedia.org/wiki/Test-driven_development">test-driven development</a> (TDD).</p>
-<div class="page-columns page-full"><p>The smaller the problem the less code you need to write to solve it. Long and complex code can be challenging to navigate and reason about. Try keeping related code on one monitor screen<sup>2</sup> for better comprehension, easier debugging and more efficient development.</p><div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup>&nbsp;Rotating the monitor helps.</p></li></div></div>
-<p>Avoid iterating over data with a for loop unless you really have to. It is a short way to <a href="https://en.wikipedia.org/wiki/Off-by-one_error">off-by-one</a> and out-of-bounds errors. You will also be tempted to change variables inside the for loop and to create loops inside loops. Good luck debugging that.</p>
+<p>The smaller the problem the less code you need to write to solve it. Long and complex code can be challenging to navigate and reason about. Try keeping related code on one monitor screen<sup>2</sup> for better comprehension, easier debugging and more efficient development.</p>
+<div class="no-row-height column-margin column-container"><div id="fn2"><p><sup>2</sup>&nbsp;Rotating the monitor helps.</p></div></div><p>Avoid iterating over data with a for loop unless you really have to. It is a short way to <a href="https://en.wikipedia.org/wiki/Off-by-one_error">off-by-one</a> and out-of-bounds errors. You will also be tempted to change variables inside the for loop and to create loops inside loops. Good luck debugging that.</p>
 
 
 </section>
@@ -874,12 +917,13 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 
 
 
+
 <section id="foliage-sucks" class="level2 page-columns page-full">
 <h2 data-anchor-id="foliage-sucks">Foliage sucks</h2>
 <p>Urban trees, especially big dense ones, are becoming a rare sight in our environment. They provide habitat for many species, offer shade in the summer, combat the heat island effect, reduce stormwater pollution, filter air, absorb noise and are beneficial for our mental health. Despite all these superb benefits I have one bone to pick with them—they block my view from above.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-aerial.jpg" class="quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 <p>The area you see above is a <code>natural=wood</code> for OSM mapper. There are some quirks on how you map an area like this. OSM wiki mentions <a href="https://wiki.openstreetmap.org/wiki/Forest#Which_tag_should_be_used?">six different approaches</a>. Irrespective of the approach taken, one question remains: what is under the trees?</p>
@@ -888,8 +932,11 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 <p>It is now used, for example, to archive heritage sites so that they can be viewed by the future generations. They&nbsp;are also used in agriculture for crop monitoring.</p>
 <p>LIDAR became more widely known by the general public when it was used to <a href="https://www.smithsonianmag.com/science-nature/lost-cities-of-the-amazon-discovered-from-the-air-180980142/">discover artifacts</a> of <a href="https://www.youtube.com/watch?v=dphq5X-rMew">ancient civilisations</a>. These artifacts were, until now, hidden under the canopy of the rainforest. LIDAR scanning revealed a network of settlements within the Amazon forest. Similar to Amazon surveyors, we can now use LIDAR data to reveal hidden objects under the canopy.</p>
 <div class="column-page">
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/bunker-LIDAR-surface.jpg" alt="LIDAR view of forrest with visible foliage."></p>
 </div>
@@ -912,14 +959,14 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 <p>For OSM mappers, LIDAR is especially useful for discovering and aligning paths in woody areas. The&nbsp;image below looks like a well-mapped nature area with many criss-crossing paths.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-aerial.jpg" style="width:80.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-aerial.jpg" class="quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 <p>Footpaths and bike tracks form long troughs on forest beds and are clearly visible on LIDAR imagery. Notice below how many paths are misaligned or just missing.</p>
-<div class="column-body-outset">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg" style="width:100.0%" alt="Aerial view of forrest." class="figure-img"></p>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="https://sheep.observer/openstreetmap/mapping-with-LIDAR-data/paths-LIDAR-terrain.jpg" class="quarto-figure quarto-figure-center figure-img column-body-outset" style="width:100.0%" alt="Aerial view of forrest."></p>
 </figure>
 </div>
 </div>
@@ -945,11 +992,15 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 
 
 
+
 <section id="color-theme" class="level2">
 <h2 data-anchor-id="color-theme">Color theme</h2>
 <p>You can change the default color palette of LTSpice. The default one is very depressing. I use a black and white theme with waveforms color scheme from MATLAB.</p>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <p><img src="https://sheep.observer/electronics/LTSpice-color-theme/schematic.png"></p>
 </div>
@@ -959,7 +1010,7 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 </div>
 </div>
 <p>Colors can be changed using GUI or by modifying the values in the <a href="https://www.eevblog.com/forum/eda/where-does-ltspice-keep-its-settings/">config file</a>.</p>
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 12%">
 <col style="width: 87%">
