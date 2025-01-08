@@ -8,9 +8,6 @@ about:
       text: Mastodon
       href: https://en.osm.town/@owiecc
       rel: me
-    - icon: twitter
-      text: Twitter
-      href: https://twitter.com/owiecc
     - icon: github
       text: Github
       href: https://github.com/owiecc
