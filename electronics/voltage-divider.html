@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.41">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Szymon Bęczkowski">
+
+<title>The humble voltage divider – Sheep observer</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f97b1f7fd39422d69808a223bdb87b72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Merriweather" type="text/css">
+<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Raleway" type="text/css">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Sheep observer</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../programming.html"> <i class="bi bi-terminal" role="img">
+</i> 
+<span class="menu-text">programming</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../electronics.html"> <i class="bi bi-lightning" role="img">
+</i> 
+<span class="menu-text">electronics</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../openstreetmap.html"> <i class="bi bi-map" role="img">
+</i> 
+<span class="menu-text">openstreetmap</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="../all.xml"> <i class="bi bi-rss" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">The humble voltage divider</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">circuits</div>
+    <div class="quarto-category">USB PD</div>
+  </div>
+  </div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Szymon Bęczkowski </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Two resistors connected in series. It&nbsp;doesn’t get any simpler than that. Put some voltage in and get less voltage out.</p>
+<section id="the-math" class="level2">
+<h2 data-anchor-id="the-math">The Math</h2>
+<p>The output voltage of a voltage divider is the voltage on the <span class="math inline">\(R_2\)</span> resistor.</p>
+<p><span class="math display">\[ U_\text{out} = U_{R2} = R_2 \cdot I_2 \]</span></p>
+<p>All components in the circuit are connected in series, therefore <span class="math inline">\(I_2 = I_\text{in}\)</span>. The&nbsp;input current can be calculated with Ohm’s law: <span class="math inline">\(I_\text{in} = U_\text{in}/(R_1+R_2)\)</span></p>
+<p><span class="math display">\[ U_\text{out} = R_2 \cdot I_2 = R_2 \cdot I_\text{in} = \frac{R_2}{R_1+R_2} \cdot U_\text{in} \]</span></p>
+<p>Let’s explore this equation to gain some understanding what this circuit can do.</p>
+<p>The&nbsp;output voltage is the input voltage multiplied by a factor controlled by the two resistances. The&nbsp;numerator is always smaller than the denominator (because of the <span class="math inline">\(R_1+\ldots\)</span> term), therefore the whole fraction is always less than one. This means the output voltage will always be smaller than the input voltage.</p>
+<p>If both resistances are equal (<span class="math inline">\(R_1=R_2\)</span>) then:</p>
+<p><span class="math display">\[ U_\text{out} = \frac{R_2}{R_2+R_2} \cdot U_\text{in} = \frac{U_\text{in}}{2} \]</span></p>
+<p>and the output voltage becomes exactly half of the input voltage.</p>
+<p>All these equations are correct only if we do not draw any current from the voltage divider’s output. If we do <span class="math inline">\(I_2\)</span> is no longer equal to <span class="math inline">\(I_\text{in}\)</span>.</p>
+</section>
+<section id="thévenins-equivalent" class="level2">
+<h2 data-anchor-id="thévenins-equivalent">Thévenin’s equivalent</h2>
+<p>Students typically learn about Thévenin’s equivalent in their first course on electronics and then quickly forget about it. It is, however, a useful tool to simplify electronic circuit analysis. You can bundle a big part of a circuit and see how it interacts with everything else.</p>
+<p>Figure: bundle = Thévenin</p>
+<p>This simplification helps us to analyse a portion of a circuit in isolation. You can also accurately predict how that subcircuit is going to interact with other parts of the circuit, without caring how connecting circuits are implemented.</p>
+</section>
+<section id="loaded-voltage-divider" class="level2 page-columns page-full">
+<h2 data-anchor-id="loaded-voltage-divider">Loaded voltage divider</h2>
+<p>Connect a resistor to a voltage divider. Simplify the voltage divider to a Thévenin equivalent and a load resistor. A new voltage divider appears. Simplify to a new Thévenin equivalent. Load resistor needs to be much smaller than the Thévenin resistance to avoid loading the circuit.</p>
+<div class="page-columns page-full">
+<div class="quarto-figure quarto-figure-center page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="voltage-divider/always-has-been.jpg" class="quarto-figure quarto-figure-center figure-img column-body-outset" style="width:100.0%" alt="Always has been meme."></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="voltage-regulators" class="level2">
+<h2 data-anchor-id="voltage-regulators">Voltage regulators</h2>
+<ul>
+<li>LM1117-ADJ</li>
+<li>How to set output voltage</li>
+<li>R2/R1 Ratio</li>
+<li>Practical resistor values</li>
+<li>Minimum output current</li>
+<li>Thévenin equivalent of the voltage divider</li>
+<li>Impact of adj pin current</li>
+<li>Output impedance of a voltage regulator</li>
+</ul>
+</section>
+<section id="input-and-output-impedance" class="level2">
+<h2 data-anchor-id="input-and-output-impedance">Input and output impedance</h2>
+<ul>
+<li>Few different values for the same ratio vs.&nbsp;Thévenin resistance</li>
+<li>High/low output impedance</li>
+</ul>
+</section>
+<section id="choosing-the-right-resistors" class="level2">
+<h2 data-anchor-id="choosing-the-right-resistors">Choosing the right resistors</h2>
+<ul>
+<li>E6/E12/E24 series</li>
+</ul>
+</section>
+<section id="adding-hysteresis" class="level2">
+<h2 data-anchor-id="adding-hysteresis">Adding hysteresis</h2>
+</section>
+<section id="power-negotiation-in-usb-c-pd" class="level2 page-columns page-full">
+<h2 data-anchor-id="power-negotiation-in-usb-c-pd">Power negotiation in USB-C PD</h2>
+
+
+
+<div class="no-row-height column-margin column-container"><div class="">
+<p>We know from <em>the first fundamental theorem of calculus</em> that for <span class="math inline">\(x\)</span> in <span class="math inline">\([a, b]\)</span>:</p>
+<p><span class="math display">\[\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x).\]</span></p>
+</div></div></section>
+
+</main> <!-- /main -->
+</div> <!-- /content -->
+
+
+
+
+</body></html>

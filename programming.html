@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.40">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -32,11 +32,13 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="./">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-f97b1f7fd39422d69808a223bdb87b72.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-975af5cbe3c4893d946e8adc60b401e6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,7 +112,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -128,7 +130,7 @@ window.Quarto = {
 
 <link rel="alternate" type="application/rss+xml" title="Sheep observer" href="programming.xml" data-external="1"></head>
 
-<body class="nav-fixed">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -179,7 +181,7 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QWR2ZW50JTIwb2YlMjBDb2Rl">Advent of Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SnVsaWE=">Julia <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnVuY3Rpb25hbCUyMHByb2dyYW1taW5n">functional programming <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="QWR2ZW50JTIwb2YlMjBDb2Rl">Advent of Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="ZnVuY3Rpb25hbCUyMHByb2dyYW1taW5n">functional programming <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SnVsaWE=">Julia <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content column-page-left" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
 
@@ -192,33 +194,28 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="SnVsaWElMkNmdW5jdGlvbmFsJTIwcHJvZ3JhbW1pbmclMkNBZHZlbnQlMjBvZiUyMENvZGU=" data-listing-date-sort="1702335600000" data-listing-file-modified-sort="1736362101872" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2054">
-<div class="thumbnail">
-<p><a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external"></a></p><a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external">
-<p><img loading="lazy" src="./programming/intro-to-functional-programming-in-Julia/pipe.svg" class="thumbnail-image"></p>
-</a><p><a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external"></a></p>
-</div>
+<div class="quarto-post image-right" data-index="0" data-categories="SnVsaWElMkNmdW5jdGlvbmFsJTIwcHJvZ3JhbW1pbmclMkNBZHZlbnQlMjBvZiUyMENvZGU=" data-listing-date-sort="1702335600000" data-listing-file-modified-sort="1736363564885" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2054">
+<div class="thumbnail"><a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external">
+
+<img loading="lazy" src="./programming/intro-to-functional-programming-in-Julia/pipe.svg" class="thumbnail-image">
+
+</a></div>
 <div class="body">
 <h3 class="no-anchor listing-title">
 <a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external">A short introduction to functional programming in Julia</a>
 </h3>
-<div class="listing-subtitle">
-<a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external"></a>
-</div>
 <div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">
-Julia
+
+<div class="listing-category" onclick="window.quartoListingCategory('SnVsaWE='); return false;">Julia</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZnVuY3Rpb25hbCUyMHByb2dyYW1taW5n'); return false;">functional programming</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('QWR2ZW50JTIwb2YlMjBDb2Rl'); return false;">Advent of Code</div>
+
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('ZnVuY3Rpb25hbCUyMHByb2dyYW1taW5n'); return false;">
-functional programming
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('QWR2ZW50JTIwb2YlMjBDb2Rl'); return false;">
-Advent of Code
-</div>
-</div>
-<div class="listing-description">
-<a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external">How to structure the code using nothing but circles and pipes.</a>
-</div>
+<div class="delink listing-description"><a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external">
+<p>How to structure the code using nothing but circles and pipes.</p>
+</a></div>
 </div>
 <div class="metadata">
 <a href="./programming/intro-to-functional-programming-in-Julia.html" class="no-external">
@@ -232,9 +229,7 @@ Szymon Bęczkowski
 </div>
 </div>
 </div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
+<div class="listing-no-matching d-none">No matching items</div>
 </div></main> <!-- /main -->
 </div> <!-- /content -->
 

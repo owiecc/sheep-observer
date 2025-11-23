@@ -9,7 +9,7 @@
 <link>https://sheep.observer/all.html</link>
 <atom:link href="https://sheep.observer/all.xml" rel="self" type="application/rss+xml"/>
 <description>Szymon Bęczkowski&#39;s blog</description>
-<generator>quarto-1.6.40</generator>
+<generator>quarto-1.8.26</generator>
 <lastBuildDate>Mon, 11 Dec 2023 23:00:00 GMT</lastBuildDate>
 <item>
   <title>A short introduction to functional programming in Julia</title>
@@ -932,9 +932,6 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 <p>It is now used, for example, to archive heritage sites so that they can be viewed by the future generations. They&nbsp;are also used in agriculture for crop monitoring.</p>
 <p>LIDAR became more widely known by the general public when it was used to <a href="https://www.smithsonianmag.com/science-nature/lost-cities-of-the-amazon-discovered-from-the-air-180980142/">discover artifacts</a> of <a href="https://www.youtube.com/watch?v=dphq5X-rMew">ancient civilisations</a>. These artifacts were, until now, hidden under the canopy of the rainforest. LIDAR scanning revealed a network of settlements within the Amazon forest. Similar to Amazon surveyors, we can now use LIDAR data to reveal hidden objects under the canopy.</p>
 <div class="column-page">
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
@@ -996,9 +993,6 @@ font-style: inherit;">|&gt;</span> sum</span></code></pre></div>
 <section id="color-theme" class="level2">
 <h2 data-anchor-id="color-theme">Color theme</h2>
 <p>You can change the default color palette of LTSpice. The default one is very depressing. I use a black and white theme with waveforms color scheme from MATLAB.</p>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">

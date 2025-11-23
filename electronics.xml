@@ -9,7 +9,7 @@
 <link>https://sheep.observer/electronics.html</link>
 <atom:link href="https://sheep.observer/electronics.xml" rel="self" type="application/rss+xml"/>
 <description>Szymon Bęczkowski&#39;s blog</description>
-<generator>quarto-1.6.40</generator>
+<generator>quarto-1.8.26</generator>
 <lastBuildDate>Fri, 23 Jun 2023 22:00:00 GMT</lastBuildDate>
 <item>
   <title>Making LTSpice pretty</title>
@@ -23,9 +23,6 @@
 <section id="color-theme" class="level2">
 <h2 data-anchor-id="color-theme">Color theme</h2>
 <p>You can change the default color palette of LTSpice. The default one is very depressing. I use a black and white theme with waveforms color scheme from MATLAB.</p>
-<div>
-
-</div>
 <div class="quarto-layout-panel" data-layout-ncol="2">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
