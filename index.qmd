@@ -8,6 +8,9 @@ about:
       text: Mastodon
       href: https://en.osm.town/@owiecc
       rel: me
+    - icon: bluesky
+      text: Bluesky
+      href: https://bsky.app/profile/owiecc.sheep.observer
     - icon: github
       text: Github
       href: https://github.com/owiecc
